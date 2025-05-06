@@ -76,6 +76,7 @@
     header .header_inner{ height: 60px;}
 
     /* main */
+    #intro-box .img-wrap{ transform: translate(-50%,-50%) scale(0.7);}
     main section:not(:last-child){ margin-bottom: 60px; }
     main .portfolio .ctnBox .itemBox{ width: 100%; }
 
