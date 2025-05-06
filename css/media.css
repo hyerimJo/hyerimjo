@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+@media screen and (max-width:1800px){
+    /* header */
+    header{ padding: 0 20px;}
+}
+
+@media screen and (max-width:1600px){
+    /* common */
+    .font120{ font-size:80px; }
+
+    .w1600{ padding: 0 20px;}
+
+    /* main */
+    main .visual .item-box{justify-content: center;}
+    main .visual .item-box.item2 .img-box{ transform: none;}
+}
+@media screen and (max-width:1200px){
+    /* common */
+    .font120{ font-size: 70px;}
+    .font70{ font-size:50px; }
+ 
+    /* main */
+    main section:not(:last-child){ margin-bottom: 100px; }
+    main .visual .item-box .img-box figure{ display: none;} 
+    main .visual .item-box h1.title em{ display:inline; }
+    main .visual .item-box h1.title br{ display:none; }
+}
+@media screen and (max-width:1024px){
+    /* common */
+    .font120{ font-size: 55px;}
+    .font70{ font-size:40px; }
+
+    /* header */
+    header .header_inner nav{ display:none; }
+    header .header_inner #menubtn{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items: center }
+
+    /* main */
+    main section.visual{ padding:0; margin-bottom: 0;}
+    main .visual .item-box{ flex-wrap: wrap; gap:20px; }
+    main .visual .item-box h1.title{ width: 100%; }
+    main .visual .item-box.item1 h1.title{ text-align: left; }
+
+    main .about > div{ flex-direction:column; gap:0; }
+    main .about .img-box{ position: relative; width: 300px; height: 400px; overflow: hidden; align-self: center; }
+    main .about .img-box img{ position: absolute; transform:translate(-50%,-50%); top: 50%; left: 50%; min-width: 100%; min-height: 100%; object-fit: cover;}
+    main .about .txt-wrap{ width: 100%; margin-top: 40px; }
+
+    main .skill .imgBox{ flex-wrap:wrap; gap:50px 20px; }
+    main .skill .imgBox figure{width: calc((100% - 40px) / 3); text-align: center;}
+    main .skill .imgBox figure:not(:last-child){ margin-right: 0px;}
+    main .skill .imgBox figure img{ width: 80px;}
+
+    main .portfolio .ctnWrap{ transform:none; }
+    main .portfolio .ctnBox{ height: auto; padding: 0 20px; }
+    main .portfolio .ctnBox .slick-list{ margin-right: -20px;}
+    main .portfolio .ctnBox .itemBox{ position: relative; top: auto; left: auto; width: 50%; height: 300px; border-radius:20px; 
+    margin-right: 20px;}
+    main .portfolio .ctnBox .itemBox:first-child{ display:none !important; }
+    main .portfolio .ctnBox .slick-dots{ display:flex; align-items:center; margin-top: 30px; }
+    main .portfolio .ctnBox .slick-dots li{ width: 10px; height: 10px; border-radius:50%; background: #fff; cursor:pointer; opacity: 0.2; transition:all 0.3s; }
+    main .portfolio .ctnBox .slick-dots li:last-child{ display:none !important; }
+    main .portfolio .ctnBox .slick-dots li.slick-active{ background: var(--mainC); opacity: 1;}
+    main .portfolio .ctnBox .slick-dots li:not(:last-child){ margin-right: 5px;}
+    main .portfolio .ctnBox .slick-dots li button{ display:none; }
+
+}
+@media screen and (max-width:768px){
+    /* common */
+    .font70{ font-size:38px; }
+    .font30{ font-size:25px; }
+    .font25{ font-size:23px; }
+    .font20{ font-size:18px; }
+
+    /* header */
+    header .header_inner{ height: 60px;}
+
+    /* main */
+    main section:not(:last-child){ margin-bottom: 60px; }
+    main .portfolio .ctnBox .itemBox{ width: 100%; }
+
+    main .contact{ height: auto; padding: 200px 20px;}
+    
+
+}
+@media screen and (max-width:640px){
+
+}
