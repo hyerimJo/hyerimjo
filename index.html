@@ -212,12 +212,183 @@
 				<p class="txt font30"><a href="mailto:dlapdlfspdlxm@gmail.com">Email : dlapdlfspdlxm@gmail.com</a></p>
 			</div>
 		</section>
+
+		<section class="test">
+			<style>
+				.wrap {
+					margin: 300px auto;
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				.box-wrap {
+					position: relative;
+					width: 400px;
+					height: 200px;
+					border: 2px solid #333;
+				}
+
+				.box-wrap .box {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 30px;
+					font-weight: 500;
+					background: #2861D4;
+					color: #fff;
+				}
+
+				canvas {
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: block;
+					cursor: pointer;
+					width: 100%;
+					height: 100%;
+				}
+
+				.pop-box {
+					position: relative;
+					position: absolute;
+					transform: translate(-50%, -50%);
+					top: 50%;
+					left: 50%;
+					width: 500px;
+					height: 400px;
+					background: rgb(199, 139, 255);
+					font-size: 30px;
+					display: none;
+				}
+
+				.pop-box .flex-box {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 100%;
+				}
+
+				.pop-box .close {
+					position: absolute;
+					top: 10px;
+					right: 20px;
+					cursor: pointer;
+				}
+			</style>
+			<div class="wrap">
+				<div class="box-wrap">
+					<div class="box"> <!--데이터가 들어갈 부분-->
+						<p>복권 당첨~!</p>
+					</div> <canvas id="scratchCard"></canvas>
+				</div>
+				<div class="pop-box" id="popup">
+					<div class="flex-box">
+						<p class="close" id="closeBtn">X</p>
+						<p class="txt">🎉 상품 당첨 축하축하축하축 🎉</p>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main>
 	<script>
 		$(function(){
 
 		})
 	</script>
+	
+    <script> 
+        const canvas = document.getElementById('scratchCard'); 
+        const ctx = canvas.getContext('2d'); 
+        
+        let isPopupShown = false;
+        // 캔버스 크기 동기화 (CSS 크기랑 내부 픽셀 맞추기)
+         const rect = canvas.getBoundingClientRect(); 
+         const dpr = window.devicePixelRatio || 1; 
+         canvas.width = Math.round(rect.width * dpr); 
+         canvas.height = Math.round(rect.height * dpr); 
+
+        // 은색 코팅 레이어 
+        const coatingCanvas = document.createElement('canvas'); 
+        coatingCanvas.width = canvas.width; 
+        coatingCanvas.height = canvas.height; 
+        const coatingCtx = coatingCanvas.getContext('2d'); 
+        coatingCtx.fillStyle = '#000'; 
+        coatingCtx.fillRect(0, 0, canvas.width, canvas.height); 
+        
+        // 메인 캔버스 초기 화면: 코팅만
+        ctx.drawImage(coatingCanvas, 0, 0);
+        
+        // 글자 메시지 레이어 (숨겨진 상태)
+        const messageCanvas = document.createElement('canvas'); 
+        messageCanvas.width = canvas.width; 
+        messageCanvas.height = canvas.height; 
+        const msgCtx = messageCanvas.getContext('2d'); 
+        msgCtx.fillStyle = 'rgba(0,0,0,0)'; 
+        msgCtx.fillRect(0, 0, canvas.width, canvas.height); 
+
+        // ====== 브러쉬 긁기 ====== 
+        let isDrawing = false; 
+        let lastX = 0, lastY = 0; 
+        canvas.addEventListener('mousedown', (e) => { 
+            isDrawing = true; 
+            const rect = canvas.getBoundingClientRect(); 
+            const scaleX = canvas.width / rect.width; 
+            const scaleY = canvas.height / rect.height; 
+            lastX = (e.clientX - rect.left) * scaleX; 
+            lastY = (e.clientY - rect.top) * scaleY; }); 
+            canvas.addEventListener('mouseup', () => isDrawing = false); 
+            canvas.addEventListener('mouseout', () => isDrawing = false); 
+            
+            canvas.addEventListener('mousemove', function(e) { 
+            if (!isDrawing) return; 
+            const rect = canvas.getBoundingClientRect(); 
+            const scaleX = canvas.width / rect.width; 
+            const scaleY = canvas.height / rect.height; 
+            const x = (e.clientX - rect.left) * scaleX; 
+            const y = (e.clientY - rect.top) * scaleY; 
+            
+            // 브러쉬로 긁기 (지우개 모드) 
+            coatingCtx.globalCompositeOperation = 'destination-out'; 
+            coatingCtx.lineCap = 'round'; 
+            coatingCtx.lineJoin = 'round'; 
+            coatingCtx.lineWidth = 60; // 브러쉬 굵기 
+            coatingCtx.beginPath(); 
+            coatingCtx.moveTo(lastX, lastY); 
+            coatingCtx.lineTo(x, y); 
+            coatingCtx.stroke(); lastX = x; 
+            lastY = y; 
+            
+            // 다시 그리기 
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            ctx.drawImage(messageCanvas, 0, 0); 
+            ctx.drawImage(coatingCanvas, 0, 0); 
+            
+            // 긁힌 면적 계산 
+            if (!isPopupShown) { 
+                const imgData = coatingCtx.getImageData(0, 0, canvas.width, canvas.height); 
+                let transparentPixels = 0; 
+                for (let i = 3; i < imgData.data.length; i += 4) { 
+                    if (imgData.data[i] === 0) transparentPixels++; 
+                } 
+                const percent = (transparentPixels / (canvas.width * canvas.height)) * 100; 
+                if (percent >= 70) { 
+                    $('#popup').fadeIn(); 
+                    $("#scratchCard").css("display","none"); 
+                    isPopupShown = true; 
+                } 
+            } 
+        }); 
+
+        //팝업창 닫기 
+        $('#closeBtn').on('click', function() { 
+            $('#popup').fadeOut(); 
+            isPopupShown = false; 
+        }); 
+    </script>
   </body>
 </html>
 Z
