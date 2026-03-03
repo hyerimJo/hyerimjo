@@ -215,7 +215,7 @@
 
 		<section class="test">
 			<style>
-				.test{ max-width:375px; margin: 0 auto; width: 100%; margin-bottom: 300px;}
+				.test{ max-width:1080px; margin: 0 auto; width: 100%; margin-bottom: 300px;}
 				.swiper-zoom-container {
 					touch-action: none;
 				}
@@ -226,27 +226,23 @@
 			<div class="swiper swiper-container pd-thumblist-swiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<div class="thumb">
+						<div class="thumb swiper-zoom-container">
 							<img src="img/main/portfolioImg13.png" alt="">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="thumb">
+						<div class="thumb swiper-zoom-container">
 							<img src="img/main/portfolioImg10.png" alt="">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="thumb">
+						<div class="thumb swiper-zoom-container">
 							<img src="img/main/portfolioImg11.png" alt="">
 						</div>
 					</div>
 				</div>
 			</div>
 			<script>
-				document.querySelectorAll('.pd-thumblist-swiper .swiper-slide .thumb')
-					.forEach(el => {
-					el.classList.add('swiper-zoom-container');
-				});
 				// 상품 이미지
 				if (document.querySelector('.pd-thumblist-swiper')) {
 					new Swiper('.pd-thumblist-swiper', {
