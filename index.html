@@ -215,39 +215,53 @@
 
 		<section class="test">
 			<style>
-				.test{ max-width:1080px; margin: 0 auto; width: 100%; margin-bottom: 300px;}
-				.swiper-zoom-container {
-					touch-action: none;
+				.test{ max-width:375px; margin: 0 auto; width: 100%; margin-bottom: 200px;}
+				.swiper-slide {
+					overflow: hidden;
 				}
+				.test-txt{color:#fff; font-size:20px; font-weight:500; text-align:center; margin-bottom:20px; }
 			</style>
 
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.css" />
 			<script src="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.js"></script>
-			<h3>test01</h3>
+			<p class="test-txt">test 02</p>
 			<div class="swiper swiper-container pd-thumblist-swiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<div class="thumb swiper-zoom-container">
+						<div class="thumb">
 							<img src="img/main/portfolioImg13.png" alt="">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="thumb swiper-zoom-container">
+						<div class="thumb">
 							<img src="img/main/portfolioImg10.png" alt="">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="thumb swiper-zoom-container">
+						<div class="thumb">
 							<img src="img/main/portfolioImg11.png" alt="">
 						</div>
 					</div>
 				</div>
 			</div>
 			<script>
+				document.querySelectorAll('.pd-thumblist-swiper .swiper-slide .thumb')
+					.forEach(el => {
+					el.classList.add('swiper-zoom-container');
+				});
 				// 상품 이미지
 				if (document.querySelector('.pd-thumblist-swiper')) {
 					new Swiper('.pd-thumblist-swiper', {
 						zoom: true,
+						on: {
+							zoomChange: function (scale) {
+							if (scale > 1) {
+								this.allowTouchMove = false;
+							} else {
+								this.allowTouchMove = true;
+							}
+							}
+						}
 					});
 				}
 			</script>
