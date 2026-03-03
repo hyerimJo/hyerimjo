@@ -221,56 +221,58 @@
 					width: 100%;
 					height: 100%;
 				}
-				.swiper-slide {
+				.zoom-area {
 					overflow: hidden;
-					display:flex;
-					justify-content: center;
-					align-items: center;
+					position: relative;
+					touch-action: none; /* 중요 */
 				}
-				.swiper-zoom-container {
-					touch-action: none;
+				.zoom-area img {
+					width: 100%;
+					display: block;
 				}
 			</style>
 
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.css" />
 			<script src="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.js"></script>
-			<p class="test-txt">test 04</p>
+			<script src="js/pinch-zoom.js"></script>		
+			<p class="test-txt">test 05</p>
 			<div class="swiper swiper-container pd-thumblist-swiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<div class="thumb">
+						<div class="thumb zoom-area">
 							<img src="img/main/portfolioImg13.png" alt="">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="thumb">
+						<div class="thumb zoom-area">
 							<img src="img/main/portfolioImg10.png" alt="">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="thumb">
+						<div class="thumb zoom-area">
 							<img src="img/main/portfolioImg11.png" alt="">
 						</div>
 					</div>
 				</div>
 			</div>
 			<script>
-				document.querySelectorAll('.pd-thumblist-swiper .swiper-slide .thumb')
-					.forEach(el => {
-					el.classList.add('swiper-zoom-container');
-				});
-				// 상품 이미지
-				if (document.querySelector('.pd-thumblist-swiper')) {
-					new Swiper('.pd-thumblist-swiper', {
-						zoom: {
-							maxRatio: 3,
-							minRatio: 1,
-							panOnMouseMove: false
-						},
-						speed: 300,
-						resistanceRatio: 0
+				document.addEventListener("DOMContentLoaded", function () {
+
+					// Swiper 먼저 생성
+					const swiper = new Swiper('.pd-thumblist-swiper', {
+						speed: 300
 					});
-				}
+
+					// pinchzoom 적용
+					document.querySelectorAll('.zoom-area').forEach(function(el){
+						new PinchZoom(el, {
+						maxZoom: 3,
+						minZoom: 1,
+						draggableUnzoomed: false
+						});
+					});
+
+				});
 			</script>
 		</section>
 	</main>
