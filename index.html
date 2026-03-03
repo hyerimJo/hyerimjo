@@ -234,7 +234,7 @@
 
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.css" />
 			<script src="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.js"></script>
-			<p class="test-txt">test 03</p>
+			<p class="test-txt">test 04</p>
 			<div class="swiper swiper-container pd-thumblist-swiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
@@ -262,16 +262,13 @@
 				// 상품 이미지
 				if (document.querySelector('.pd-thumblist-swiper')) {
 					new Swiper('.pd-thumblist-swiper', {
-						zoom: true,
-						on: {
-							zoomChange: function (scale) {
-							if (scale > 1) {
-								this.allowTouchMove = false;
-							} else {
-								this.allowTouchMove = true;
-							}
-							}
-						}
+						zoom: {
+							maxRatio: 3,
+							minRatio: 1,
+							panOnMouseMove: false
+						},
+						speed: 300,
+						resistanceRatio: 0
 					});
 				}
 			</script>
