@@ -215,16 +215,26 @@
 
 		<section class="test">
 			<style>
-				.test{ max-width:375px; margin: 0 auto; width: 100%; margin-bottom: 200px;}
+				.test{ max-width:375px; height: 177px; margin: 0 auto; width: 100%; margin-bottom: 200px;}
+				.test-txt{color:#fff; font-size:20px; font-weight:500; text-align:center; margin-bottom:20px; }
+				.swiper-container {
+					width: 100%;
+					height: 100%;
+				}
 				.swiper-slide {
 					overflow: hidden;
+					display:flex;
+					justify-content: center;
+					align-items: center;
 				}
-				.test-txt{color:#fff; font-size:20px; font-weight:500; text-align:center; margin-bottom:20px; }
+				.swiper-zoom-container {
+					touch-action: none;
+				}
 			</style>
 
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.css" />
 			<script src="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.js"></script>
-			<p class="test-txt">test 02</p>
+			<p class="test-txt">test 03</p>
 			<div class="swiper swiper-container pd-thumblist-swiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
