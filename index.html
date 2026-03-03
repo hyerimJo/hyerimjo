@@ -215,18 +215,7 @@
 
 		<section class="test">
 			<style>
-				.test{ max-width:750px; margin: 0 auto; width: 100%; margin-bottom: 300px;}
-				.pd-thumblist-swiper .thumb {
-					position: relative;
-					overflow: hidden;
-					cursor: crosshair;
-				}
-				.pd-thumblist-swiper .thumb img {
-					width: 100%;
-					display: block;
-					transition: transform 0.3s ease;
-					transform-origin: center center;
-				}
+				.test{ max-width:375px; margin: 0 auto; width: 100%; margin-bottom: 300px;}
 			</style>
 
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.css" />
@@ -251,38 +240,16 @@
 				</div>
 			</div>
 			<script>
-			if (document.querySelector('.pd-thumblist-swiper')) {
-
-				const pdSwiper = new Swiper('.pd-thumblist-swiper', {
-					slidesPerView: 1
+				document.querySelectorAll('.pd-thumblist-swiper .swiper-slide .thumb')
+					.forEach(el => {
+					el.classList.add('swiper-zoom-container');
 				});
-
-				pdSwiper.slides.forEach(slide => {
-
-					const area = slide.querySelector('.thumb');
-					const img = area.querySelector('img');
-
-					const scale = 2; // 확대 배율
-
-					area.addEventListener('mousemove', e => {
-
-					const rect = area.getBoundingClientRect();
-					const x = (e.clientX - rect.left) / rect.width * 100;
-					const y = (e.clientY - rect.top) / rect.height * 100;
-
-					img.style.transformOrigin = `${x}% ${y}%`;
-					img.style.transform = `scale(${scale})`;
-
+				// 상품 이미지
+				if (document.querySelector('.pd-thumblist-swiper')) {
+					new Swiper('.pd-thumblist-swiper', {
+						zoom: true,
 					});
-
-					area.addEventListener('mouseleave', () => {
-					img.style.transform = 'scale(1)';
-					img.style.transformOrigin = 'center center';
-					});
-
-				});
-
-			}
+				}
 			</script>
 		</section>
 	</main>
