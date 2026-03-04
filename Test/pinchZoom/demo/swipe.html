@@ -36,7 +36,7 @@
         <div class="description">
             <h1>Pinchzoom.js</h1>
             <p>
-                Multi-touch zoom in Javascript
+                Multi-touch zoom in Javascript - test02
             </p>
         </div>
         <div class="pd-thumblist-swiper">
@@ -74,12 +74,28 @@
     </div>
 
     <script type='text/javascript'>
-      Array.from(document.querySelectorAll('.pinch-zoom')).forEach(function(el) {
-        new PinchZoom.default(el, {});
+      // 1️⃣ PinchZoom 인스턴스 저장
+      const pinchInstances = [];
+
+      document.querySelectorAll('.pinch-zoom').forEach(function (el) {
+        const instance = new PinchZoom.default(el, {});
+        pinchInstances.push(instance);
       });
-      
+
+      // 2️⃣ Swiper 생성 + 슬라이드 변경 시 이전 슬라이드 reset
       const swiper = new Swiper('.pd-thumblist-swiper', {
-        speed: 300
+        speed: 300,
+        nested: true,
+        touchStartPreventDefault: false,
+        on: {
+          slideChangeTransitionStart: function () {
+            const prevIndex = this.previousIndex;
+
+            if (pinchInstances[prevIndex]) {
+              pinchInstances[prevIndex].reset();
+            }
+          }
+        }
       });
     </script>
 
