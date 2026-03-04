@@ -21,7 +21,7 @@
       position: relative;
     }
     .pinch-zoom-container{
-      height: 820px;
+      height: 500px;
     }
     .pinch-zoom {
       width: 100%;
@@ -36,7 +36,7 @@
         <div class="description">
             <h1>Pinchzoom.js</h1>
             <p>
-                Multi-touch zoom in Javascript - test03
+                Multi-touch zoom in Javascript - test04
             </p>
         </div>
         <div class="pd-thumblist-swiper">
@@ -81,15 +81,25 @@
         pinchInstances.push(instance);
       });
 
+      // 🔥 여기 추가
+      function resetPinch(instance) {
+        instance.zoomFactor = 1;
+        instance.lastScale = 1;
+        instance.offset = {
+          x: instance.initialOffset.x,
+          y: instance.initialOffset.y
+        };
+        instance.update();
+      }
+
       const swiper = new Swiper('.pd-thumblist-swiper', {
         speed: 300,
         nested: true,
         touchStartPreventDefault: false,
         on: {
-          slideChange: function () {
-            // 모든 슬라이드 초기화
+          slideChangeTransitionStart: function () {
             pinchInstances.forEach(instance => {
-              instance.reset();
+              resetPinch(instance);
             });
           }
         }
