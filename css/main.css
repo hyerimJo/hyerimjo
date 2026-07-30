@@ -124,15 +124,18 @@ main .visual .item-box.item2 .img-box figure.img4{ bottom: -20px; left: 30px; }
 main .about > div{ position: relative; display:flex; gap:50px; }
 main .about .img-box{ height:700px; flex-shrink: 0; position:sticky; top:50px; left:0; }
 main .about .img-box img{ height: 100%;}
-main .about .txt-wrap{ display:flex; flex-direction: column; justify-content: space-between; padding: 20px 0 0; width: 100%;}
+main .about .txt-wrap{ display:flex; flex-direction: column; justify-content: space-between; padding: 20px 0; width: 100%;}
 main .about .txt-box > *:not(:last-child){ margin-bottom: 50px;}
 main .about .txt-wrap .link{ margin-top: 40px;}
 main .about .txt-box dl{ color:#1B1E23; } 
 main .about .txt-box .title{ font-weight: 600; margin-bottom: 20px; line-height: 1.5; }
 main .about .txt-box .txt{ line-height: 1.7; background: #f7e2ff; padding: 20px; border-radius:20px; } 
 main .about .txt-box .txt:not(:last-child){ margin-bottom: 20px;}
-main .about .txt-box .txt a{ color: #1B1E23; display:inline-flex; align-items:center; }
-main .about .txt-box .txt a img{ margin-left: 5px; filter: invert(1); -webkit-filter: invert(1);}
+main .about .txt-box .txt > *{ display:flex; align-items:center; }
+main .about .txt-box .txt a{ margin-bottom: 10px; color:#1B1E23; }
+main .about .txt-box .txt a img{ width: 12px; margin-left: 5px; filter: invert(1); -webkit-filter: invert(1);}
+main .about .txt-box .txt p{ font-size:17px; color:#333; }
+main .about .txt-box .txt p::before{ display:block; width: 4px; height: 4px; border-radius:50%; background: #600d81; content: '';margin-right: 5px;}
 
 /* Skill */
 main .skill{ padding: 100px 0;}
