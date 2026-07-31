@@ -91,7 +91,8 @@ justify-content: center; align-items: center; background: #111; transition:all 0
 }
 
 /* Common */
-main section:not(:last-child){ margin-bottom: 150px; }
+main{ background: #fbf1ff; background: linear-gradient(135deg, #fff, #fbf1ff, #ebb7ff); transition: opacity 0.4s ease; }
+main section:not(:first-child){ padding-top: 150px; }
 
 main h3.title{ text-align: center; text-transform: uppercase; font-weight: 700;  color:#1B1E23; margin-bottom: 60px; filter: blur(5px); -webkit-filter: blur(5px); letter-spacing: 20px; opacity: 0; transition: all 1s;}
 
