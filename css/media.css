@@ -7,44 +7,47 @@
 
 @media screen and (max-width:1600px){
     /* common */
-    .font120{ font-size:80px; }
-
     .w1600{ padding: 0 20px;}
 
+    :root{
+        --font120: 9rem;
+    }
+
+
     /* main */
-    main .visual .item-box{justify-content: center;}
     main .visual .item-box.item2 .img-box{ transform: none;}
 }
+
 @media screen and (max-width:1200px){
-    /* common */
-    .font120{ font-size: 70px;}
-    .font70{ font-size:50px; }
- 
     /* main */
-    main section:not(:last-child){ margin-bottom: 100px; }
     main .visual .item-box .img-box figure{ display: none;} 
     main .visual .item-box h1.title em{ display:inline; }
-    main .visual .item-box h1.title br{ display:none; }
+
+    main .about .img-box{ height: 500px;}
 }
+
 @media screen and (max-width:1024px){
     /* common */
-    .font120{ font-size: 55px;}
-    .font70{ font-size:40px; }
+    :root{
+        --font120: 6rem;
+    }
 
     /* header */
     header .header_inner nav{ display:none; }
     header .header_inner #menubtn{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items: center }
 
     /* main */
-    main section.visual{ padding:0; margin-bottom: 0;}
-    main .visual .item-box{ flex-wrap: wrap; gap:20px; }
-    main .visual .item-box h1.title{ width: 100%; }
-    main .visual .item-box.item1 h1.title{ text-align: left; }
+    main{overflow: hidden;}
+    main .visual{ padding:0; margin-bottom: 0; height: auto; }
+    main .visual .item-box{ flex-wrap: wrap; gap:0 !important; }
+    main .visual .item-box .title{ width: 100%; }
 
     main .about > div{ flex-direction:column; gap:0; }
-    main .about .img-box{ position: relative; width: 300px; height: 400px; overflow: hidden; align-self: center; }
+    main .about .img-box{ position: relative; width: 300px; height: 400px; overflow: hidden; align-self: center; top: 0; }
     main .about .img-box img{ position: absolute; transform:translate(-50%,-50%); top: 50%; left: 50%; min-width: 100%; min-height: 100%; object-fit: cover;}
-    main .about .txt-wrap{ width: 100%; margin-top: 40px; }
+    main .about .txt-wrap{ width: 100%; margin-top: 40px; padding: 0; }
+    main .about .txt-wrap .link{ margin-top: 20px; }
+    main .about .txt-box .txt p{ font-size:15px; }
 
     main .skill .imgBox{ flex-wrap:wrap; gap:50px 20px; }
     main .skill .imgBox figure{width: calc((100% - 40px) / 3); text-align: center;}
@@ -58,32 +61,47 @@
     margin-right: 20px;}
     main .portfolio .ctnBox .itemBox:first-child{ display:none !important; }
     main .portfolio .ctnBox .slick-dots{ display:flex; align-items:center; margin-top: 30px; }
-    main .portfolio .ctnBox .slick-dots li{ width: 10px; height: 10px; border-radius:50%; background: #fff; cursor:pointer; opacity: 0.2; transition:all 0.3s; }
+    main .portfolio .ctnBox .slick-dots li{ width: 10px; height: 10px; border-radius:50%; background: #fff; cursor:pointer;transition:all 0.3s; }
     main .portfolio .ctnBox .slick-dots li:last-child{ display:none !important; }
     main .portfolio .ctnBox .slick-dots li.slick-active{ background: var(--mainC); opacity: 1;}
     main .portfolio .ctnBox .slick-dots li:not(:last-child){ margin-right: 5px;}
     main .portfolio .ctnBox .slick-dots li button{ display:none; }
 
 }
+
 @media screen and (max-width:768px){
     /* common */
-    .font70{ font-size:38px; }
-    .font30{ font-size:25px; }
-    .font25{ font-size:23px; }
-    .font20{ font-size:18px; }
+    html, body{ font-size: 50%;}
+    :root{
+        --font70: 5.5rem;
+    }
 
     /* header */
     header .header_inner{ height: 60px;}
+    header .header_inner .logo{ width: 40px;}
+    header .header_inner #menubtn{ width: 20px; height: 20px; }
+    header .header_inner #menubtn span{ height: 2px; }
 
     /* main */
     #intro-box .img-wrap{ transform: translate(-50%,-50%) scale(0.7);}
-    main section:not(:last-child){ margin-bottom: 60px; }
+
+    main{background: linear-gradient(135deg, #fdf7ff, #fbf1ff, #d8bbe2);}
+    main section:not(:last-child,.visual){ padding: 0; margin-bottom: 70px; }
+    main h3.title{ margin-bottom: 40px; }
+
+    main .visual{ min-height: auto; padding: 200px 0 150px;}
+    main .visual .item-box.type--right{ margin-bottom: 30px; }
+    main .visual .item-box.type--right .title{ text-align: left; }
+
+    main .about .txt-box .title{ margin-bottom: 10px;}
+    main .about .txt-box > *:not(:last-child){ margin-bottom: 30px; }
+    main .about .txt-wrap .link{ font-size: 20px; margin: 40px auto 0;  font-weight: 500; }
+
+    main .skill .imgBox{ gap:30px 20px; }
+    main .skill .imgBox figure{ width: 20%;}
+
     main .portfolio .ctnBox .itemBox{ width: 100%; }
 
-    main .contact{ height: auto; padding: 200px 20px;}
-    
-
-}
-@media screen and (max-width:640px){
-
+    main .contact{ height: auto; padding: 100px 0 150px; } 
+    main .contact .title{letter-spacing: normal; margin-bottom: 20px;}
 }
