@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
 	<meta property="og:image" content="img/common/img.jpg" />
     <title>HYERIM PORTFOLIO</title>
 	<link rel="icon" href="img/common/favicon.ico">
@@ -20,8 +20,50 @@
 
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/sub.js"></script>
 	<script src="js/aos.js"></script>
+
+	<script type="text/javascript">
+		if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+			window.location = 'microsoft-edge:' + window.location;
+			setTimeout(function () {
+				window.location = 'https://go.microsoft.com/fwlink/%linkid=2135547';
+			}, 1);
+		}
+
+		function updateOrientation() {
+			var orientationValue = window.orientation
+			if (orientationValue == 90 || orientationValue == -90) {
+				$("meta[name=viewport]").attr("content", "width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi");
+			}
+		}
+
+		window.onload = function () {
+			document.body.onorientationchange = updateOrientation;
+		}
+
+		var windowWidth = window.screen.width
+		setViewPort(windowWidth);
+		function setViewPort(w_width) {
+			if (w_width <= 440) {
+				$("meta[name=viewport]").attr("content", "width=440, maximum-scale=2.0, user-scalable=yes, target-densitydpi=medium-dpi");
+			} else {
+				$("meta[name=viewport]").attr("content", "width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi");
+			}
+		}
+
+		window.addEventListener('resize', function (event) {
+			windowWidth = window.screen.width
+			setViewPort(windowWidth);
+		}, true);
+
+		// vh
+		function setScreenSize() {
+			let vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
+		}
+		setScreenSize();
+		window.addEventListener("resize", () => setScreenSize());
+	</script>
   </head>
   <body>
 	<header>
@@ -42,7 +84,7 @@
 			</button>
 		</div>
 		<div id="allmenu">
-			<button type="button" class="close"><img src="img/common/close.png" alt=""></button>
+			<button type="button" class="close"><img src="img/main/close.svg" alt=""></button>
 			<div class="allgnb"></div>
 		</div>
 	</header>
@@ -54,21 +96,21 @@
 		</div>-->
 		<section class="visual">
 			<div class="w1600">
-				<div class="item-box item1" data-aos="fade-in">
+				<div class="item-box type--right" data-aos="fade-in">
 					<div class="img-box">
-						<figure class="img1"><img src="img/main/skillIcon05.png" alt=""></figure>
-						<figure class="img2"><img src="img/main/skillIcon06.png" alt=""></figure>
-						<figure class="img3"><img src="img/main/skillIcon07.png" alt=""></figure>
+						<figure><img src="img/main/skillIcon05.png" alt=""></figure>
+						<figure><img src="img/main/skillIcon06.png" alt=""></figure>
+						<figure><img src="img/main/skillIcon07.png" alt=""></figure>
 					</div>
-					<h1 class="title font120"><em class="split">WEB PUBLISHER &#125;</em></h2>
+					<h1 class="title"><em class="split">WEB PUBLISHER &#125;</em></h2>
 				</div>
-				<div class="item-box item2" data-aos="fade-in">
-					<h1 class="title font120"><em class="split">WELCOME TO</em> <br><em class="split">MY PORTFOLIO</em></h2>
+				<div class="item-box type--left" data-aos="fade-in">
+					<h1 class="title"><em class="split">WELCOME TO</em> <br><em class="split">MY PORTFOLIO</em></h2>
 					<div class="img-box">
-						<figure class="img1"><img src="img/main/skillIcon01.png" alt=""></figure>
-						<figure class="img2"><img src="img/main/skillIcon02.png" alt=""></figure>
-						<figure class="img3"><img src="img/main/skillIcon03.png" alt=""></figure>
-						<figure class="img4"><img src="img/main/skillIcon04.png" alt=""></figure>
+						<figure><img src="img/main/skillIcon01.png" alt=""></figure>
+						<figure><img src="img/main/skillIcon02.png" alt=""></figure>
+						<figure><img src="img/main/skillIcon03.png" alt=""></figure>
+						<figure><img src="img/main/skillIcon04.png" alt=""></figure>
 					</div>
 				</div>
 			</div>
@@ -79,35 +121,52 @@
 				<div class="txt-wrap">
 					<div class="txt-box">
 						<dl>
-							<dt class="title font30" data-aos="fade-up">
-								안녕하세요 <em>:	&#41;</em> <br>
+							<dt class="title" data-aos="fade-up">
+								안녕하세요 <em>: &#41;</em> <br>
 								끊임없이 도전하고 성장하는 <br> 
 								WEB PUBLISHER 조혜림입니다.
 							</dt>
-							<dd class="txt font20" data-aos="fade-up">저는 지난 2년간 웹 에이전시에서 다양한 프로젝트를 진행하며, 총 40개 이상의 프로젝트를 제작했습니다. 이를 통해 웹 퍼블리싱뿐만 아니라 다양한 디지털 환경에 대한 깊은 이해를 쌓았습니다. 또한, 매 프로젝트마다 배움의 자세로 임하며, 문제 해결 능력과 협업 능력을 키워왔습니다. 이제는 그동안 쌓은 경험을 바탕으로 더 큰 도전과 성장을 목표로 하고 있습니다.</dd>
+							<dd class="txt" data-aos="fade-up">
+								웹 에이전시에서 3년간 40개 이상의 프로젝트를 수행하며 다양한 웹사이트를 구축했고, <br>
+								현재는 1년간 현대면세점에서 이커머스 서비스를 운영하며 실무 경험을 쌓고 있습니다. <br>
+								이벤트·프로모션·브랜드 페이지 제작 및 운영을 담당하며 사용자 경험을 고려한 퍼블리싱을 수행하고, IT·기획·디자인·마케팅 등 다양한 부서와 협업하며 안정적인 서비스 운영과 개선 업무를 경험했습니다.
+								새로운 기술과 업무를 빠르게 습득하고, 문제를 해결하며 더 나은 결과를 만들어가는 과정을 즐깁니다. 
+								앞으로도 구축 경험과 운영 노하우를 바탕으로 사용자와 비즈니스 모두에게 가치 있는 서비스를 만드는 
+								퍼블리셔로 성장하고자 합니다.
+							</dd>
 						</dl>
 						<dl class="education">
-							<dt class="title font30" data-aos="fade-up">EDUCATION</dt>
-							<dd class="txt font20" data-aos="fade-up">
+							<dt class="title" data-aos="fade-up">EDUCATION</dt>
+							<dd class="txt" data-aos="fade-up">
 								UI/UX 반응형 웹디자인 & 웹퍼블리셔(디자인&코딩) 양성과정<br>
 								교육기간 : 2022.01.17 ~ 2022.07.29<br>
 								교육기관 : 그린 컴퓨터아카데미 (서울 강남구)
 							</dd>
 						</dl>
 						<dl class="experience">
-							<dt class="title font30" data-aos="fade-up">EXPERIENCE</dt>
-							<dd class="txt font20" data-aos="fade-up">
-								<a href="https://www.webmoa.co.kr/" target="blank">(주)웹모아<img src="img/main/linkIocn.png" alt=""></a><br>
-								2022.10.04 ~ 2025.04.31
+							<dt class="title" data-aos="fade-up">EXPERIENCE</dt>
+							<dd class="txt" data-aos="fade-up">
+								<a href="https://www.hddfs.com/shop/dm/main.do" target="blank">
+								키스템프 - 현대 면세점 파견<img src="img/main/linkIocn.png" alt="">
+								</a>
+								<p>2025.08 ~ 현재</p>
+								<p>이커머스 서비스 운영 및 프로모션 제작</p>
+							</dd>
+							<dd class="txt" data-aos="fade-up">
+								<a href="https://www.webmoa.co.kr/" target="blank">
+									(주)웹모아<img src="img/main/linkIocn.png" alt="">
+								</a>
+								<p>2022.10 ~ 2025.05</p>
+								<p>기업 웹사이트 및 브랜드 홈페이지 구축</p>
 							</dd>
 						</dl>
 					</div>
-					<div class="link font25" data-aos="fade-up">
+					<div class="link" data-aos="fade-up">
 						<a href="https://chartreuse-rhubarb-e3d.notion.site/18cd431f020380d39311da783a4915b5" target="blank" id="viewbtn">
 							<span>자기소개 더보기</span>
 							<figure class="arrow">
-								<img src="img/main/viewArrow.png" class="on" alt="">
-								<img src="img/main/viewArrow.png" class="off" alt="">
+								<img src="img/main/viewArrow.svg" class="on" alt="">
+								<img src="img/main/viewArrow.svg" class="off" alt="">
 							</figure>
 						</a>
 					</div>
@@ -116,7 +175,7 @@
 		</section>
 		<section class="skill" id="skill">
 			<div class="w1600">
-				<h3 class="title font70" data-aos="fade-in">Skill</h3>
+				<h3 class="title" data-aos="fade-in">Skill</h3>
 				<div class="imgBox">
 					<figure data-aos="fade-in"><img src="img/main/skillIcon01.png" alt=""></figure>
 					<figure data-aos="fade-in" data-aos-delay="100"><img src="img/main/skillIcon02.png" alt=""></figure>
@@ -129,7 +188,7 @@
 			</div>
 		</section>
 		<section class="portfolio" id="portfolio">
-			<h3 class="title font70" data-aos="fade-in">Portfolio</h3>
+			<h3 class="title" data-aos="fade-in">Portfolio</h3>
 			<div class="ctnWrap">
 				<div class="ctnBox" data-columns="3">
 					<div class="itemBox" data-index="0">
@@ -137,69 +196,69 @@
 					<div class="itemBox" data-index="1">
 						<a href="https://www.hyundai-am.com/kr/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg13.png" alt=""></figure>
-							<p class="font30">현대첨단소재<img src="img/main/viewArrow.png" alt=""></p>
+							<p>현대첨단소재<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="2">
 						<a href="http://junytony.co.kr/kr/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg01.png" alt=""></figure>
-							<p class="font30">주니토니<img src="img/main/viewArrow.png" alt=""></p>
+							<p>주니토니<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="3">
 						<a href="https://www.junytonyballet.com/kr/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg02.png" alt=""></figure>
-							<p class="font30">주니토니 키즈캐슬<img src="img/main/viewArrow.png" alt=""></p>
+							<p>주니토니 키즈캐슬<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="4">
 						<a href="https://www.altiall.com/kr/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg12.png" alt=""></figure>
-							<p class="font30">알티올<img src="img/main/viewArrow.png" alt=""></p>
+							<p>알티올<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="5">
 						<a href="https://cowellmedi.com/kr/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg03.png" alt=""></figure>
-							<p class="font30">코웰메디<img src="img/main/viewArrow.png" alt=""></p>
+							<p>코웰메디<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="6">
 						<a href="https://www.anapro.com/en/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg04.png" alt=""></figure>
-							<p class="font30">나노신소재<img src="img/main/viewArrow.png" alt=""></p>
+							<p class="font30">나노신소재<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="7">
 						<a href="https://www.sgfco.kr/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg05.png" alt=""></figure>
-							<p class="font30">세광그린푸드<img src="img/main/viewArrow.png" alt=""></p>
+							<p>세광그린푸드<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="8">
 						<a href="https://recruit.kecc.co.kr/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg06.png" alt=""></figure>
-							<p class="font30">한국종합기술(채용)<img src="img/main/viewArrow.png" alt=""></p>
+							<p>한국종합기술(채용)<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="9">
 						<a href="https://www.dowbiomedica.co.kr/kr/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg07.png" alt=""></figure>
-							<p class="font30">다우바이오메디카<img src="img/main/viewArrow.png" alt=""></p>
+							<p>다우바이오메디카<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="10">
 						<a href="https://pntbiz.com/en/" target="_blank">
 							<figure class="fitBox"><img src="img/main/portfolioImg08.png" alt=""></figure>
-							<p class="font30">피플앤드테크놀러지<img src="img/main/viewArrow.png" alt=""></p>
+							<p>피플앤드테크놀러지<img src="img/main/viewArrow.svg" alt=""></p>
 						</a>
 					</div>
 					<div class="itemBox" data-index="11">
 						<a href="https://chartreuse-rhubarb-e3d.notion.site/18cd431f020380d39311da783a4915b5#18cd431f0203808b864ce4a43fcad410" target="blank" id="viewbtn">
-							<span class="font25">포트폴리오 더보기</span>
+							<span>포트폴리오 더보기</span>
 							<figure class="arrow">
-								<img src="img/main/viewArrow.png" class="on" alt="">
-								<img src="img/main/viewArrow.png" class="off" alt="">
+								<img src="img/main/viewArrow.svg" class="on" alt="">
+								<img src="img/main/viewArrow.svg" class="off" alt="">
 							</figure>
 						</a>
 					</div>
@@ -208,72 +267,9 @@
 		</section>
 		<section class="contact" id="contact">
 			<div class="w1600">
-				<h3 class="title font120">CONTACT ME</h3>
-				<p class="txt font30"><a href="mailto:dlapdlfspdlxm@gmail.com">Email : dlapdlfspdlxm@gmail.com</a></p>
+				<h3 class="title">CONTACT ME</h3>
+				<p class="txt"><a href="mailto:dlapdlfspdlxm@gmail.com">Email : dlapdlfspdlxm@gmail.com</a></p>
 			</div>
-		</section>
-
-		<section class="test">
-			<style>
-				.test{ max-width:375px; height: 177px; margin: 0 auto; width: 100%; margin-bottom: 200px;}
-				.test-txt{color:#fff; font-size:20px; font-weight:500; text-align:center; margin-bottom:20px; }
-				.swiper-container {
-					width: 100%;
-					height: 100%;
-				}
-				.zoom-area {
-					overflow: hidden;
-					position: relative;
-					touch-action: none; /* 중요 */
-				}
-				.zoom-area img {
-					width: 100%;
-					display: block;
-				}
-			</style>
-
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.css" />
-			<script src="https://cdn.jsdelivr.net/npm/swiper@9.2.4/swiper-bundle.min.js"></script>
-			<script src="js/pinch-zoom.js"></script>		
-			<p class="test-txt">test 05</p>
-			<div class="swiper swiper-container pd-thumblist-swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="thumb zoom-area">
-							<img src="img/main/portfolioImg13.png" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="thumb zoom-area">
-							<img src="img/main/portfolioImg10.png" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="thumb zoom-area">
-							<img src="img/main/portfolioImg11.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-			<script>
-				document.addEventListener("DOMContentLoaded", function () {
-
-					// Swiper 먼저 생성
-					const swiper = new Swiper('.pd-thumblist-swiper', {
-						speed: 300
-					});
-
-					// pinchzoom 적용
-					document.querySelectorAll('.zoom-area').forEach(function(el){
-						new PinchZoom(el, {
-						maxZoom: 3,
-						minZoom: 1,
-						draggableUnzoomed: false
-						});
-					});
-
-				});
-			</script>
 		</section>
 	</main>
   </body>
