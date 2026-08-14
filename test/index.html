@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+        <meta property="og:image" content="img/common/img.jpg" />
+        <title>미래엔 과제-조혜림</title>
+        <link rel="icon" href="img/common/favicon.ico">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <link rel="stylesheet" type="text/css" href="css/aos.css">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/animation.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/media.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/Pretendard/dist/web/static/pretendard.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/S-CoreDream/S-CoreDream.css" type="text/css"/>
+
+        <script src="//code.jquery.com/jquery-latest.js"></script>   
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/aos.js"></script>
+
+        <script type="text/javascript">
+            if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+                window.location = 'microsoft-edge:' + window.location;
+                setTimeout(function () {
+                    window.location = 'https://go.microsoft.com/fwlink/%linkid=2135547';
+                }, 1);
+            }
+
+            function updateOrientation() {
+                var orientationValue = window.orientation
+                if (orientationValue == 90 || orientationValue == -90) {
+                    $("meta[name=viewport]").attr("content", "width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi");
+                }
+            }
+
+            window.onload = function () {
+                document.body.onorientationchange = updateOrientation;
+            }
+
+            var windowWidth = window.screen.width
+            setViewPort(windowWidth);
+            function setViewPort(w_width) {
+                if (w_width <= 440) {
+                    $("meta[name=viewport]").attr("content", "width=440, maximum-scale=2.0, user-scalable=yes, target-densitydpi=medium-dpi");
+                } else {
+                    $("meta[name=viewport]").attr("content", "width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi");
+                }
+            }
+
+            window.addEventListener('resize', function (event) {
+                windowWidth = window.screen.width
+                setViewPort(windowWidth);
+            }, true);
+
+            // vh
+            function setScreenSize() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            setScreenSize();
+            window.addEventListener("resize", () => setScreenSize());
+        </script>
+    </head>
+    <body>
+        <article class="top-banner">
+            <a href="">
+                <img src="images/early_link.png" alt="선착순 초코 회원이라면 누구나 무료! 지금 신청" class="text">
+                <img src="images/ico_link_arrow.svg" alt="" class="svg view-arrow">
+            </a>
+        </article>
+        
+        <article class="side-nav">
+            <figure>
+                <img src="images/side_char_pin.png" alt="" class="pin">
+                <img src="images/side_char.png" alt="캐릭터">
+            </figure>
+            <ul>
+                <li><a href="#apply">계기교육 안내</a></li>
+                <li><a href="#history">초코타임미리보기</a></li>
+                <li><a href="#subject">커리큘럼과목 <img src="images/ico_nav01.png" alt=""></a></li>
+                <li><a href="#live">신청하기<img src="images/ico_nav02.png" alt=""></a></li>
+            </ul>
+            
+            <button type="button" id="top-btn"><img src="images/ico_top.png" alt="위로가기 버튼"></button>
+        </article>
+
+        <div class="key-visual__wrap">
+            <div class="key-visual">
+                <div class="key-visual__header">
+                    <figure><img src="images/choco_logo.png" alt=""></figure>
+                    <div>
+                        <button type="button" class="login-btn">로그인</button>
+                        <a href=""><img src="images/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="key-visual__content">
+                    <article class="key-visual__image">
+                        <img src="images/visual_char.gif" alt="6/17(수) 단 하루! 6월을 이해하는 가장 쉬운 방법 바로 초코타임">
+                    </article>
+
+                    <article class="key-visual__text">
+                        <div data-aos="fade-up">
+                            <div class="title">
+                                <img src="images/paper_char.png" alt="선착순">
+                                <p><em>마감 전, 빠르게</em> 초코타임 신청하러 가자</p>
+                                <button type="button" class="click-btn">
+                                    <img src="images/go_txt.png" class="btn-text" alt="gogo">
+                                    <img src="images/ico_link_arrow.svg" alt="링크이동" class="svg view-arrow">
+                                </button>
+                            </div>
+                            <div class="text-box">
+                                <div>
+                                    <dl>
+                                        <dt>수업 내용</dt>
+                                        <dd>아이의 생각을 바꾸는 <br>30분의 역사 경험</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>참여 선물</dt>
+                                        <dd>초간단 댓글&후기 쓰고 <br>특별한 선물 받자♥</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>참여 방법</dt>
+                                        <dd>한국사·입시 전문 쌤과 <br>ZOOM에서 실시간으로 만나요!</dd>
+                                    </dl>
+                                </div>
+                                <p>※ 신청자는 수업 10분 전부터 ‘나의 초코타임 ▶ 수업 들어가기’ 클릭 시, 참여 가능</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="content__wrap apply__wrap" id="apply">
+            <div class="content apply">
+                <section class="apply__title">
+                    <article class="apply__header">
+                        <span>
+                            6월 공휴일
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9" fill="none">
+                                <path d="M5.22158 7.40305L0 0H15L10.1789 7.32347C9.01625 9.08959 6.44032 9.13094 5.22158 7.40305Z" fill="#579A55"/>
+                            </svg>
+                        </span>
+                        <p class="title">“ 아이는 <em>왜 쉬는 날인지</em> 알고 있을까요 ”</p>
+                        <p class="text">현충일, 6·25… 이름은 익숙하지만 의미는 낯선 아이들</p>
+                    </article>
+
+                    <article class="apply__image">
+                        <figure data-aos="fade-in">
+                            <img src="images/apply_content.svg" class="svg" alt="뉴스스크랩">
+                        </figure>
+                    </article>
+                </section>
+
+                <section class="apply__form">
+                    <form action="">
+                        <dl>
+                            <dt>주로 사용하는 퍼블리싱 기술/환경을 선택해 주세요. (복수 선택 가능)</dt>
+                        </dl>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <div class="content__wrap history__wrap" id="history">
+            <div class="content history">
+                <header>
+                    <h2>콘텐츠 타이틀</h2>
+                    <h4>콘텐츠 서브 타이틀</h4>
+                </header>
+                <section>
+                    <article>
+                        <div class="image"></div>
+                        <div class="texts">
+                            <h3>아티클 타이틀</h3>
+                            <h4>아티클 섭타이틀</h4>
+                            <p>두줄이상의 내용</p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <div class="content__wrap subject__wrap" id="subject">
+            <div class="content subject">
+                <header>
+                    <h2>콘텐츠 타이틀</h2>
+                    <h4>콘텐츠 서브 타이틀</h4>
+                </header>
+                <section>
+                    <article>
+                        <div class="image"></div>
+                        <div class="texts">
+                            <h3>아티클 타이틀</h3>
+                            <h4>아티클 섭타이틀</h4>
+                            <p>두줄이상의 내용</p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <div class="content__wrap live__wrap" id="live">
+            <div class="content live">
+                <header>
+                    <h2>콘텐츠 타이틀</h2>
+                    <h4>콘텐츠 서브 타이틀</h4>
+                </header>
+                <section>
+                    <article>
+                        <div class="image"></div>
+                        <div class="texts">
+                            <h3>아티클 타이틀</h3>
+                            <h4>아티클 섭타이틀</h4>
+                            <p>두줄이상의 내용</p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
