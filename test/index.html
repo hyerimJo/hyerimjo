@@ -1,225 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
-        <meta property="og:image" content="img/common/img.jpg" />
-        <title>미래엔 과제-조혜림</title>
-        <link rel="icon" href="img/common/favicon.ico">
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-        <link rel="stylesheet" type="text/css" href="css/aos.css">
-        <link rel="stylesheet" type="text/css" href="css/base.css">
-        <link rel="stylesheet" type="text/css" href="css/animation.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <link rel="stylesheet" type="text/css" href="css/media.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/Pretendard/dist/web/static/pretendard.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/S-CoreDream/S-CoreDream.css" type="text/css"/>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>웹퍼블리셔 포트폴리오</title>
+    <style>
+        :root{
+            --bg:#f4f1ea;
+            --fg:#1d1d22;
+            --sub:#6b6b73;
+            --card:#fff;
+            --line:#dedad0;
+            --ac:#3d5afe;
+            box-sizing:border-box;
+            padding-top:env(safe-area-inset-top,0px);
+            padding-bottom:env(safe-area-inset-bottom,0px);
+            color-scheme:light
+        }
 
-        <script src="//code.jquery.com/jquery-latest.js"></script>   
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="js/common.js"></script>
-        <script src="js/aos.js"></script>
+        @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14151a;--fg:#f1efe9;--sub:#9a9aa4;--card:#1f2027;--line:#2c2d36;--ac:#8c9eff;color-scheme:dark}}
 
-        <script type="text/javascript">
-            if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-                window.location = 'microsoft-edge:' + window.location;
-                setTimeout(function () {
-                    window.location = 'https://go.microsoft.com/fwlink/%linkid=2135547';
-                }, 1);
-            }
+        :root[data-theme="dark"]{
+            --bg:#14151a;
+            --fg:#f1efe9;
+            --sub:#9a9aa4;
+            --card:#1f2027;
+            --line:#2c2d36;
+            --ac:#8c9eff;
+            color-scheme:dark
+        }
 
-            function updateOrientation() {
-                var orientationValue = window.orientation
-                if (orientationValue == 90 || orientationValue == -90) {
-                    $("meta[name=viewport]").attr("content", "width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi");
-                }
-            }
+        *{box-sizing:border-box;margin:0}
+        html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);}
+        body{background:var(--bg);color:var(--fg);font-family:'Pretendard',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;line-height:1.7}
+        section{padding:80px 24px;max-width:960px;margin:0 auto}
+        h2{font-size:13px;letter-spacing:.2em;color:var(--ac);text-transform:uppercase;margin-bottom:28px}
 
-            window.onload = function () {
-                document.body.onorientationchange = updateOrientation;
-            }
-
-            var windowWidth = window.screen.width
-            setViewPort(windowWidth);
-            function setViewPort(w_width) {
-                if (w_width <= 440) {
-                    $("meta[name=viewport]").attr("content", "width=440, maximum-scale=2.0, user-scalable=yes, target-densitydpi=medium-dpi");
-                } else {
-                    $("meta[name=viewport]").attr("content", "width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi");
-                }
-            }
-
-            window.addEventListener('resize', function (event) {
-                windowWidth = window.screen.width
-                setViewPort(windowWidth);
-            }, true);
-
-            // vh
-            function setScreenSize() {
-                let vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty('--vh', `${vh}px`);
-            }
-            setScreenSize();
-            window.addEventListener("resize", () => setScreenSize());
-        </script>
-    </head>
-    <body>
-        <article class="top-banner">
-            <a href="">
-                <img src="images/early_link.png" alt="선착순 초코 회원이라면 누구나 무료! 지금 신청" class="text">
-                <img src="images/ico_link_arrow.svg" alt="" class="svg view-arrow">
-            </a>
-        </article>
+        /* intro */
+        .intro{min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+        .string{position:absolute;top:0;left:50%;width:2px;background:var(--line); height:0; animation:str 1.6s cubic-bezier(.3,1.4,.5,1) .2s forwards}
+        .card{position:relative;width:min(340px,86vw);aspect-ratio:1.75;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.18);padding:26px;display:flex;flex-direction:column;justify-content:space-between;transform:translateY(-120vh) rotate(-8deg);animation:drop 1.4s cubic-bezier(.3,1.3,.5,1) .2s forwards,sway 4s ease-in-out 1.8s infinite;transform-origin:top center}
+        .card b{font-size:26px;letter-spacing:-.02em}
+        .card small{display:block;color:var(--sub);font-size:13px}
+        .card .ln{width:34px;height:3px;background:var(--ac);border-radius:2px;margin-bottom:10px}
+        .hint{position:absolute;bottom:28px;left:0;right:0;text-align:center;color:var(--sub);font-size:12px;opacity:0;animation:fade .8s ease 2s forwards}
         
-        <article class="side-nav">
-            <figure>
-                <img src="images/side_char_pin.png" alt="" class="pin">
-                <img src="images/side_char.png" alt="캐릭터">
-            </figure>
-            <ul>
-                <li><a href="#apply">계기교육 안내</a></li>
-                <li><a href="#history">초코타임미리보기</a></li>
-                <li><a href="#subject">커리큘럼과목 <img src="images/ico_nav01.png" alt=""></a></li>
-                <li><a href="#live">신청하기<img src="images/ico_nav02.png" alt=""></a></li>
-            </ul>
-            
-            <button type="button" id="top-btn"><img src="images/ico_top.png" alt="위로가기 버튼"></button>
-        </article>
+        @keyframes drop{0%{transform:translateY(-120vh) rotate(-8deg)}100%{transform:translateY(0) rotate(0)}}
+        @keyframes sway{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}}
+        @keyframes str{to{height:calc(50% - 90px)}}
+        @keyframes fade{to{opacity:1}}
 
-        <div class="key-visual__wrap">
-            <div class="key-visual">
-                <div class="key-visual__header">
-                    <figure><img src="images/choco_logo.png" alt=""></figure>
-                    <div>
-                        <button type="button" class="login-btn">로그인</button>
-                        <a href=""><img src="images/logo.png" alt=""></a>
+        .lany{position:absolute;top:-15vh;left:50%;margin-left:calc(min(300px,58vw)/-2);width:min(300px,58vw);display:flex;flex-direction:column;align-items:center;transform-origin:top center;transform:translateY(-110%);animation:drop 1.5s cubic-bezier(.3,1.35,.5,1) .2s forwards,sway 4.5s ease-in-out 1.8s infinite;z-index:2}
+        .strap{width:22px;height:40vh;background:#000}
+        .clip{width:46px;height:20px;border:5px solid #aaa;border-radius:8px;margin-top:-2px}
+        .badge{width:100%;background:#fff;border-radius:20px;padding:12px;color:#1d1d22;box-shadow:0 24px 60px rgba(0,0,0,.5);margin-top:-6px}
+        .ph{aspect-ratio:1/1.05;border-radius:10px;background:linear-gradient(135deg,#ffb3d1,#c9a6ff);display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+        .badge h3{font-size:clamp(24px,6vw,32px);font-weight:900;letter-spacing:-.02em;line-height:1;margin-top:12px}
+        .badge .rl{display:flex;justify-content:space-between;align-items:flex-end;margin-top:6px;font-size:11px;color:#6b6b73}
+        .bar{height:22px;width:70px;background:repeating-linear-gradient(90deg,#1d1d22 0 2px,transparent 2px 4px,#1d1d22 4px 5px,transparent 5px 8px)}
+        .w{position:absolute;font-weight:900;letter-spacing:-.03em;font-size:clamp(22px,7vw,64px);line-height:1;color:#222;z-index:1;opacity:0;animation:fade 1s ease 1.4s forwards}
+        .w1{top:24%;left:5%}.w2{top:32%;right:5%}.w3{bottom:24%;left:5%}.w4{bottom:17%;right:5%}
+        .type{position:absolute;left:5%;bottom:7%;font-size:14px;color:#000;z-index:1}
+        .type::after{content:"|";animation:blink 1s steps(1) infinite}
+        @keyframes blink{50%{opacity:0}}
+        .hint{left:auto;right:5%;bottom:7%;text-align:right;color:#000}
+
+        /* about */
+        .lead{font-size:clamp(20px,3.4vw,28px);line-height:1.5;font-weight:600;letter-spacing:-.02em;margin-bottom:40px}
+        .tl{border-left:2px solid var(--line);padding-left:22px}
+        .tl div{position:relative;margin-bottom:30px}
+        .tl div::before{content:"";position:absolute;left:-29px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--ac)}
+        .tl em{font-style:normal;color:var(--sub);font-size:13px}
+        .tl h3{font-size:17px}
+        .tl p{color:var(--sub);font-size:14.5px}
+
+        /* skills */
+        .chips{display:flex;flex-wrap:wrap;gap:10px}
+        .chips span{padding:9px 18px;border:1px solid var(--line);background:var(--card);border-radius:99px;font-size:14px}
+
+        /* slides */
+        .slider{position:relative}
+        .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;scrollbar-width:none}
+        .track::-webkit-scrollbar{display:none}
+        .slide{flex:0 0 100%;scroll-snap-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+        .shot{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--c1),var(--c2))}
+
+        .info{padding:20px 22px}
+        .info h3{font-size:18px}
+        .info p{color:var(--sub);font-size:14px;margin:4px 0 10px}
+        .info i{font-style:normal;font-size:12px;color:var(--ac)}
+        .ctrl{display:flex;align-items:center;justify-content:space-between;margin-top:18px}
+        .dots{display:flex;gap:8px}
+        .dots b{width:8px;height:8px;border-radius:50%;background:var(--line);transition:.3s}
+        .dots b.on{background:var(--ac);width:24px;border-radius:4px}
+        .btns button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:16px;cursor:pointer;margin-left:8px}
+
+        footer{text-align:center;color:var(--sub);font-size:13px;padding:40px 24px 60px}
+        footer a{color:var(--ac);text-decoration:none}
+    </style>
+</head>
+
+<body>
+    <header class="intro">
+        <div class="w w1">PUBLISHER</div><div class="w w2">CODER</div><div class="w w3">RESPONSIVE</div><div class="w w4">ACCESSIBLE</div>
+        <div class="lany">
+            <div class="strap"></div><div class="clip"></div>
+            <div class="badge">
+            <div class="ph">내 사진</div>
+            <h3>홍길동</h3>
+            <div class="rl"><span>Web Publisher<br>ID 98-0001</span><div class="bar"></div></div>
+            </div>
+        </div>
+        <div class="type" id="type"></div>
+        <div class="hint">Scroll ↓</div>
+    </header>
+
+    <section id="about">
+        <h2>About</h2>
+        <p class="lead">웹 표준과 접근성을 지키면서,<br>디자인의 의도를 화면에 정확히 옮기는 퍼블리셔입니다.</p>
+        <h2>경력기술서</h2>
+        <div class="tl">
+            <div><em>2022.03 – 현재</em><h3>○○ 주식회사 · 웹퍼블리셔</h3><p>반응형 웹/모바일 웹 퍼블리싱, 공통 컴포넌트 및 UI 가이드 구축, 웹 접근성 개선</p></div>
+            <div><em>2020.06 – 2022.02</em><h3>△△ 에이전시 · 퍼블리셔</h3><p>기업 홈페이지·프로모션 페이지 30여 건 제작, 크로스브라우징 대응</p></div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="chips">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>jQuery</span>
+            <span>Git</span>
+            <span>Figma</span>
+            <span>Photoshop</span>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2>Works</h2>
+        <div class="slider">
+            <div class="track" id="track">
+                <div class="slide">
+                    <div class="shot" style="--c1:#3d5afe;--c2:#7c4dff">Project 01 이미지</div>
+                    <div class="info">
+                        <h3>프로젝트 이름 01</h3>
+                        <p>반응형 기업 홈페이지 리뉴얼 · 퍼블리싱 100%</p>
+                        <i>HTML · SCSS · JS</i>
                     </div>
                 </div>
-                <div class="key-visual__content">
-                    <article class="key-visual__image">
-                        <img src="images/visual_char.gif" alt="6/17(수) 단 하루! 6월을 이해하는 가장 쉬운 방법 바로 초코타임">
-                    </article>
+                <div class="slide">
+                    <div class="shot" style="--c1:#00b894;--c2:#0984e3">Project 02 이미지</div>
+                    <div class="info">
+                        <h3>프로젝트 이름 02</h3>
+                        <p>쇼핑몰 모바일 웹 · 공통 컴포넌트 제작</p>
+                        <i>HTML · CSS · jQuery</i>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="shot" style="--c1:#e17055;--c2:#fdcb6e">Project 03 이미지</div>
+                    <div class="info">
+                        <h3>프로젝트 이름 03</h3>
+                        <p>이벤트 프로모션 페이지 · 인터랙션 구현</p>
+                        <i>HTML · CSS · JS</i>
+                    </div>
+                </div>
+            </div>
 
-                    <article class="key-visual__text">
-                        <div data-aos="fade-up">
-                            <div class="title">
-                                <img src="images/paper_char.png" alt="선착순">
-                                <p><em>마감 전, 빠르게</em> 초코타임 신청하러 가자</p>
-                                <button type="button" class="click-btn">
-                                    <img src="images/go_txt.png" class="btn-text" alt="gogo">
-                                    <img src="images/ico_link_arrow.svg" alt="링크이동" class="svg view-arrow">
-                                </button>
-                            </div>
-                            <div class="text-box">
-                                <div>
-                                    <dl>
-                                        <dt>수업 내용</dt>
-                                        <dd>아이의 생각을 바꾸는 <br>30분의 역사 경험</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>참여 선물</dt>
-                                        <dd>초간단 댓글&후기 쓰고 <br>특별한 선물 받자♥</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>참여 방법</dt>
-                                        <dd>한국사·입시 전문 쌤과 <br>ZOOM에서 실시간으로 만나요!</dd>
-                                    </dl>
-                                </div>
-                                <p>※ 신청자는 수업 10분 전부터 ‘나의 초코타임 ▶ 수업 들어가기’ 클릭 시, 참여 가능</p>
-                            </div>
-                        </div>
-                    </article>
+            <div class="ctrl">
+                <div class="dots" id="dots"></div>
+                <div class="btns">
+                    <button id="prev" aria-label="이전">←</button>
+                    <button id="next" aria-label="다음">→</button>
                 </div>
             </div>
         </div>
+    </section>
+    
+    <footer>© 2026 홍길동 · <a href="mailto:hello@email.com">hello@email.com</a></footer>
 
-        <div class="content__wrap apply__wrap" id="apply">
-            <div class="content apply">
-                <section class="apply__title">
-                    <article class="apply__header">
-                        <span>
-                            6월 공휴일
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9" fill="none">
-                                <path d="M5.22158 7.40305L0 0H15L10.1789 7.32347C9.01625 9.08959 6.44032 9.13094 5.22158 7.40305Z" fill="#579A55"/>
-                            </svg>
-                        </span>
-                        <p class="title">“ 아이는 <em>왜 쉬는 날인지</em> 알고 있을까요 ”</p>
-                        <p class="text">현충일, 6·25… 이름은 익숙하지만 의미는 낯선 아이들</p>
-                    </article>
+    <script>
+        (function(){
+            var tx='Building clean, accessible web pages',
+                k=0,
+                el=document.getElementById('type');
+            
+            setTimeout(function f(){if(k<=tx.length){el.textContent=tx.slice(0,k++);setTimeout(f,70)}},2000);
 
-                    <article class="apply__image">
-                        <figure data-aos="fade-in">
-                            <img src="images/apply_content.svg" class="svg" alt="뉴스스크랩">
-                        </figure>
-                    </article>
-                </section>
+            var t=document.getElementById('track'),s=t.children,d=document.getElementById('dots');
 
-                <section class="apply__form">
-                    <form action="">
-                        <dl>
-                            <dt>주로 사용하는 퍼블리싱 기술/환경을 선택해 주세요. (복수 선택 가능)</dt>
-                        </dl>
-                    </form>
-                </section>
-            </div>
-        </div>
+            for(var i=0;i<s.length;i++){d.appendChild(document.createElement('b'))}
+            
+            function w(){return s[0].offsetWidth+16}
 
-        <div class="content__wrap history__wrap" id="history">
-            <div class="content history">
-                <header>
-                    <h2>콘텐츠 타이틀</h2>
-                    <h4>콘텐츠 서브 타이틀</h4>
-                </header>
-                <section>
-                    <article>
-                        <div class="image"></div>
-                        <div class="texts">
-                            <h3>아티클 타이틀</h3>
-                            <h4>아티클 섭타이틀</h4>
-                            <p>두줄이상의 내용</p>
-                        </div>
-                    </article>
-                </section>
-            </div>
-        </div>
+            function upd(){var n=Math.round(t.scrollLeft/w());[].forEach.call(d.children,function(e,i){e.className=i===n?'on':''})}
 
-        <div class="content__wrap subject__wrap" id="subject">
-            <div class="content subject">
-                <header>
-                    <h2>콘텐츠 타이틀</h2>
-                    <h4>콘텐츠 서브 타이틀</h4>
-                </header>
-                <section>
-                    <article>
-                        <div class="image"></div>
-                        <div class="texts">
-                            <h3>아티클 타이틀</h3>
-                            <h4>아티클 섭타이틀</h4>
-                            <p>두줄이상의 내용</p>
-                        </div>
-                    </article>
-                </section>
-            </div>
-        </div>
+            t.addEventListener('scroll',upd);upd();
 
-        <div class="content__wrap live__wrap" id="live">
-            <div class="content live">
-                <header>
-                    <h2>콘텐츠 타이틀</h2>
-                    <h4>콘텐츠 서브 타이틀</h4>
-                </header>
-                <section>
-                    <article>
-                        <div class="image"></div>
-                        <div class="texts">
-                            <h3>아티클 타이틀</h3>
-                            <h4>아티클 섭타이틀</h4>
-                            <p>두줄이상의 내용</p>
-                        </div>
-                    </article>
-                </section>
-            </div>
-        </div>
-    </body>
+            document.getElementById('next').onclick=function(){t.scrollBy({left:w(),behavior:'smooth'})};
+
+            document.getElementById('prev').onclick=function(){t.scrollBy({left:-w(),behavior:'smooth'})};
+        })();
+    </script>
+</body>
+
 </html>
