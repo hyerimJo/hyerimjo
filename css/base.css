@@ -231,7 +231,7 @@ figure{margin: 0;}
 .wrap{max-width:1000px;margin:0 auto}
 .label{font:500 18px Raleway,sans-serif;font-weight: 700;letter-spacing:.2em;color:var(--accent);margin-bottom:20px}
 .sub-label{font-size:18px;font-weight:700;color:var(--accent);margin:56px 0 16px; }
-.sub-label a{display:inline-flex; align-items:center; text-decoration: underline; text-underline-offset: 10px; text-decoration-thickness: 2px;}
+.sub-label a{display:inline-flex; align-items:center; text-decoration: underline; text-underline-offset: 10px; text-decoration-thickness: 2px; color: var(--accent);}
 .sub-label a .arrow{ position: relative; width: 20px; height: 20px; overflow: hidden; margin-left: 5px; filter: invert(1); -webkit-filter: invert(1);}
 .sub-label a .arrow img{ position: absolute; transform: translate(0, 0); transition:all 0.3s 0.1s, opacity 0.3s; }
 .sub-label a .arrow .on{ opacity: 1; }
