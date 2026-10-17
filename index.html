@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="ko">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
 	<meta property="og:image" content="img/common/img.jpg" />
     <title>HYERIM PORTFOLIO</title>
 	<link rel="icon" href="img/common/favicon.ico">
 	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-	<link rel="stylesheet" type="text/css" href="css/common.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Raleway:wght@500;700&display=swap" rel="stylesheet">
 
-	<script src="//code.jquery.com/jquery-latest.js"></script>   
-	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-
-    <script src="js/common.js"></script>
-    <script src="js/main.js"></script>
+	<script src="//code.jquery.com/jquery-latest.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 	<script src="js/aos.js"></script>
+	<script src="js/common.js"></script>
 
 	<script type="text/javascript">
 		if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
@@ -64,213 +61,360 @@
 		setScreenSize();
 		window.addEventListener("resize", () => setScreenSize());
 	</script>
-  </head>
-  <body>
+</head>
+
+<body>
 	<header>
-		<div class="header_inner">
-			<a href="/" class="logo"><img src="img/common/headerLogo.png" alt=""></a>
-			<nav>
-				<ul id="gnb">
-					<li><a href="#about">ABOUT ME</a></li>
-					<li><a href="#skill">SKILL</a></li>
-					<li><a href="#portfolio">PORTFOLIO</a></li>
-					<li><a href="#contact">CONTACT ME</a></li>
-				</ul>
-			</nav>
-			<button type="button" id="menubtn">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-		</div>
-		<div id="allmenu">
-			<button type="button" class="close"><img src="img/main/close.svg" alt=""></button>
-			<div class="allgnb"></div>
-		</div>
+        <div data-aos="fade-down">
+            <a href="#intro" class="logo"><img src="img/common/headerLogo2.svg" alt=""></a>
+            <nav>
+                <ul id="gnb">
+                    <li><a href="#intro">MAIN</a></li>
+                    <li><a href="#about">ABOUT ME</a></li>
+                    <li><a href="#works">WORKS</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-btn" type="button" aria-label="메뉴 열기">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
 	</header>
-	<main>
-		<!--<div id="intro-box">
-			<div class="img-wrap">
-				<figure><img src="img/main/introLogo.svg" class="svg" alt=""></figure>
-			</div>
-		</div>-->
-		<section class="visual">
-			<div class="w1600">
-				<div class="item-box type--right" data-aos="fade-in">
-					<div class="img-box">
-						<figure><img src="img/main/skillIcon05.png" alt=""></figure>
-						<figure><img src="img/main/skillIcon06.png" alt=""></figure>
-						<figure><img src="img/main/skillIcon07.png" alt=""></figure>
-					</div>
-					<h1 class="title"><em class="split">WEB PUBLISHER &#125;</em></h2>
-				</div>
-				<div class="item-box type--left" data-aos="fade-in">
-					<h1 class="title"><em class="split">WELCOME TO</em> <br><em class="split">MY PORTFOLIO</em></h2>
-					<div class="img-box">
-						<figure><img src="img/main/skillIcon01.png" alt=""></figure>
-						<figure><img src="img/main/skillIcon02.png" alt=""></figure>
-						<figure><img src="img/main/skillIcon03.png" alt=""></figure>
-						<figure><img src="img/main/skillIcon04.png" alt=""></figure>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="about" id="about">
-			<div class="w1600">
-				<figure class="img-box"><img src="img/main/aboutImg.png" alt=""></figure>
-				<div class="txt-wrap">
-					<div class="txt-box">
-						<dl>
-							<dt class="title" data-aos="fade-up">
-								안녕하세요 <em>: &#41;</em> <br>
-								끊임없이 도전하고 성장하는 <br> 
-								WEB PUBLISHER 조혜림입니다.
-							</dt>
-							<dd class="txt" data-aos="fade-up">
-								웹 에이전시에서 3년간 40개 이상의 프로젝트를 수행하며 다양한 웹사이트를 구축했고, <br>
-								현재는 1년간 현대면세점에서 이커머스 서비스를 운영하며 실무 경험을 쌓고 있습니다. <br>
-								이벤트·프로모션·브랜드 페이지 제작 및 운영을 담당하며 사용자 경험을 고려한 퍼블리싱을 수행하고, IT·기획·디자인·마케팅 등 다양한 부서와 협업하며 안정적인 서비스 운영과 개선 업무를 경험했습니다.
-								새로운 기술과 업무를 빠르게 습득하고, 문제를 해결하며 더 나은 결과를 만들어가는 과정을 즐깁니다. 
-								앞으로도 구축 경험과 운영 노하우를 바탕으로 사용자와 비즈니스 모두에게 가치 있는 서비스를 만드는 
-								퍼블리셔로 성장하고자 합니다.
-							</dd>
-						</dl>
-						<dl class="education">
-							<dt class="title" data-aos="fade-up">EDUCATION</dt>
-							<dd class="txt" data-aos="fade-up">
-								UI/UX 반응형 웹디자인 & 웹퍼블리셔(디자인&코딩) 양성과정<br>
-								교육기간 : 2022.01.17 ~ 2022.07.29<br>
-								교육기관 : 그린 컴퓨터아카데미 (서울 강남구)
-							</dd>
-						</dl>
-						<dl class="experience">
-							<dt class="title" data-aos="fade-up">EXPERIENCE</dt>
-							<dd class="txt" data-aos="fade-up">
-								<a href="https://www.hddfs.com/shop/dm/main.do" target="blank">
-								키스템프 - 현대 면세점 파견<img src="img/main/linkIocn.png" alt="">
-								</a>
-								<p>2025.08 ~ 현재</p>
-								<p>이커머스 서비스 운영 및 프로모션 제작</p>
-							</dd>
-							<dd class="txt" data-aos="fade-up">
-								<a href="https://www.webmoa.co.kr/" target="blank">
-									(주)웹모아<img src="img/main/linkIocn.png" alt="">
-								</a>
-								<p>2022.10 ~ 2025.05</p>
-								<p>기업 웹사이트 및 브랜드 홈페이지 구축</p>
-							</dd>
-						</dl>
-					</div>
-					<div class="link" data-aos="fade-up">
-						<a href="https://chartreuse-rhubarb-e3d.notion.site/18cd431f020380d39311da783a4915b5" target="blank" id="viewbtn">
-							<span>자기소개 더보기</span>
-							<figure class="arrow">
-								<img src="img/main/viewArrow.svg" class="on" alt="">
-								<img src="img/main/viewArrow.svg" class="off" alt="">
-							</figure>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="skill" id="skill">
-			<div class="w1600">
-				<h3 class="title" data-aos="fade-in">Skill</h3>
-				<div class="imgBox">
-					<figure data-aos="fade-in"><img src="img/main/skillIcon01.png" alt=""></figure>
-					<figure data-aos="fade-in" data-aos-delay="100"><img src="img/main/skillIcon02.png" alt=""></figure>
-					<figure data-aos="fade-in" data-aos-delay="200"><img src="img/main/skillIcon03.png" alt=""></figure>
-					<figure data-aos="fade-in" data-aos-delay="300"><img src="img/main/skillIcon04.png" alt=""></figure>
-					<figure data-aos="fade-in" data-aos-delay="400"><img src="img/main/skillIcon05.png" alt=""></figure>
-					<figure data-aos="fade-in" data-aos-delay="500"><img src="img/main/skillIcon06.png" alt=""></figure>
-					<figure data-aos="fade-in" data-aos-delay="600"><img src="img/main/skillIcon07.png" alt=""></figure>
-				</div>
-			</div>
-		</section>
-		<section class="portfolio" id="portfolio">
-			<h3 class="title" data-aos="fade-in">Portfolio</h3>
-			<div class="ctnWrap">
-				<div class="ctnBox" data-columns="3">
-					<div class="itemBox" data-index="0">
-					</div>
-					<div class="itemBox" data-index="1">
+
+    <main>
+        <div class="intro" id="intro">
+            <div class="w w1" data-aos="fade-right">PUBLISHER</div>
+            <div class="w w2" data-aos="fade-left">CODER</div>
+            <div class="w w3" data-aos="fade-right">RESPONSIVE</div>
+            <div class="w w4" data-aos="fade-left">ACCESSIBLE</div>
+
+            <div class="lany">
+                <div class="strap">
+                    <span>WEB PUBLISHER · WEB PUBLISHER · WEB PUBLISHER · WEB PUBLISHER</span>
+                </div>
+                <div class="clip"></div>
+                <div class="badge">
+                <div class="ph">
+                    <img src="/img/main/aboutImg.png" alt="">
+                </div>
+                <h3>조혜림</h3>
+                <div class="rl"><span>Web Publisher<br>ID 98-0224</span><div class="barcode"></div></div>
+                </div>
+            </div>
+            <div class="type" id="type"></div>
+            <div class="hint">Scroll ↓</div>
+        </div>
+
+        <section id="about">
+            <div class="wrap">
+                <p class="label">ABOUT</p>
+                <h1 class="lead">웹 표준과 접근성을 지키면서,<br>디자인의 의도를 화면에 정확히 옮기는 퍼블리셔입니다.</h1>
+                <div class="box">
+                    <p>웹 에이전시에서 3년간 40개 이상의 프로젝트를 수행하며 다양한 웹사이트를 구축했고, <br>
+                        현재는 1년간 현대면세점에서 이커머스 서비스를 운영하며 실무 경험을 쌓고 있습니다.</p>
+                    <p>이벤트·프로모션·브랜드 페이지 제작 및 운영을 담당하며 사용자 경험을 고려한 퍼블리싱을 수행하고, <br>
+                        IT·기획·디자인·마케팅 등 다양한 부서와 협업하며 안정적인 서비스 운영과 개선 업무를 경험했습니다.</p>
+                    <p>새로운 기술과 업무를 빠르게 습득하고, 문제를 해결하며 더 나은 결과를 만들어가는 과정을 즐깁니다. <br>
+                        앞으로도 구축 경험과 운영 노하우를 바탕으로 사용자와 비즈니스 모두에게 가치 있는 서비스를 만드는 퍼블리셔로 성장하고자 합니다.</p>
+                </div>
+
+                <h2 class="sub-label">경력기술</h2>
+                <ol class="tl">
+                    <li>
+                        <time datetime="2022-03">2025.08 – 현재</time>
+                        <h3>키스템프 - 현대 면세점 파견 · 퍼블리셔</h3>
+                        <p>적응형 웹/모바일 웹 퍼블리싱, 공통 컴포넌트 및 UI 가이드 구축, 웹 접근성 개선, 이커머스 서비스 운영 및 프로모션 제작</p>
+                    </li>
+                    <li>
+                        <time datetime="2020-06">2022.10 – 2025.05</time>
+                        <h3>(주)웹모아 · 퍼블리셔</h3>
+                        <p>반응형 웹/모바일 웹 퍼블리싱, 기업 홈페이지·프로모션 페이지 40여 건 제작, 크로스브라우징 대응</p>
+                    </li>
+                </ol>
+
+                <h2 class="sub-label">교육</h2>
+                <div class="box edu">
+                    <p>UI/UX 반응형 웹디자인 &amp; 웹퍼블리셔(디자인&amp;코딩) 양성과정</p>
+                    <p>교육기간 : 2022.01.17 ~ 2022.07.29<br>교육기관 : 그린컴퓨터아카데미 (서울 강남구)</p>
+                </div>
+
+                <h2 class="sub-label">
+                    <a href="https://chartreuse-rhubarb-e3d.notion.site/18cd431f020380d39311da783a4915b5">
+                        MORE ABOUT ME
+                        <figure class="arrow">
+                            <img src="img/main/viewArrow.svg" class="on" alt="">
+                            <img src="img/main/viewArrow.svg" class="off" alt="">
+                        </figure>
+                    </a>
+                </h2>
+            </div>
+        </section>
+
+        <section style="padding-top:0">
+            <div class="wrap">
+                <p class="label">SKILLS</p>
+                <ul class="chips">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>jQuery</li>
+                    <li>Git</li>
+                    <li>Figma</li>
+                    <li>Photoshop</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="works" class="works">
+            <div class="tit">
+                <h2>WORKS</h2>
+                <p class="sub">스크롤하거나 화살표로 넘겨보세요</p>
+            </div>
+
+            <div class="swiper portfolio-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
 						<a href="https://www.hyundai-am.com/kr/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg13.png" alt=""></figure>
-							<p>현대첨단소재<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="2">
+                            <div class="thumb">
+                                <span class="num">01</span>
+                                <figure><img src="/img/main/portfolioImg13.png" alt=""></figure>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <span>CORPORATE · RESPONSIVE</span>
+                                </div>
+                                <div class="row">
+                                    <h3>현대첨단소재</h3>
+                                    <i class="arrow">↗</i>
+                                </div>
+                                <p class="desc">기업 홈페이지 PC/모바일 반응형 퍼블리싱</p>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>jQuery</li>
+                                    <li>반응형</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
 						<a href="http://junytony.co.kr/kr/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg01.png" alt=""></figure>
-							<p>주니토니<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="3">
-						<a href="https://www.junytonyballet.com/kr/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg02.png" alt=""></figure>
-							<p>주니토니 키즈캐슬<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="4">
+                            <div class="thumb">
+                                <span class="num">02</span>
+                                <figure><img src="/img/main/portfolioImg01.png" alt=""></figure>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <span>CORPORATE · RESPONSIVE</span>
+                                </div>
+                                <div class="row">
+                                    <h3>주니토니</h3>
+                                    <i class="arrow">↗</i>
+                                </div>
+                                <p class="desc">기업 홈페이지 PC/모바일 반응형 퍼블리싱</p>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>jQuery</li>
+                                    <li>반응형</li>
+                                    <li>GSAP</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+						<a href="https://www.kkapt.co.kr/" target="_blank">
+                            <div class="thumb">
+                                <span class="num">03</span>
+                                <figure><img src="/img/main/portfolioImg14.png" alt=""></figure>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <span>CORPORATE · RESPONSIVE</span>
+                                </div>
+                                <div class="row">
+                                    <h3>금강주택</h3>
+                                    <i class="arrow">↗</i>
+                                </div>
+                                <p class="desc">기업 홈페이지 PC/모바일 반응형 퍼블리싱</p>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>jQuery</li>
+                                    <li>반응형</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
 						<a href="https://www.altiall.com/kr/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg12.png" alt=""></figure>
-							<p>알티올<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="5">
-						<a href="https://cowellmedi.com/kr/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg03.png" alt=""></figure>
-							<p>코웰메디<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="6">
+                            <div class="thumb">
+                                <span class="num">04</span>
+                                <figure><img src="/img/main/portfolioImg12.png" alt=""></figure>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <span>CORPORATE · RESPONSIVE</span>
+                                </div>
+                                <div class="row">
+                                    <h3>알티올</h3>
+                                    <i class="arrow">↗</i>
+                                </div>
+                                <p class="desc">기업 홈페이지 PC/모바일 반응형 퍼블리싱</p>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>jQuery</li>
+                                    <li>반응형</li>
+                                    <li>Canvas</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+						<a href="https://www.altiall.com/kr/" target="_blank">
+                            <div class="thumb">
+                                <span class="num">05</span>
+                                <figure><img src="/img/main/portfolioImg03.png" alt=""></figure>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <span>CORPORATE · RESPONSIVE</span>
+                                </div>
+                                <div class="row">
+                                    <h3>코웰메디</h3>
+                                    <i class="arrow">↗</i>
+                                </div>
+                                <p class="desc">기업 홈페이지 PC/모바일 반응형 퍼블리싱</p>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>jQuery</li>
+                                    <li>반응형</li>
+                                    <li>GSAP</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
 						<a href="https://www.anapro.com/en/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg04.png" alt=""></figure>
-							<p class="font30">나노신소재<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="7">
-						<a href="https://www.sgfco.kr/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg05.png" alt=""></figure>
-							<p>세광그린푸드<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="8">
-						<a href="https://recruit.kecc.co.kr/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg06.png" alt=""></figure>
-							<p>한국종합기술(채용)<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="9">
-						<a href="https://www.dowbiomedica.co.kr/kr/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg07.png" alt=""></figure>
-							<p>다우바이오메디카<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="10">
-						<a href="https://pntbiz.com/en/" target="_blank">
-							<figure class="fitBox"><img src="img/main/portfolioImg08.png" alt=""></figure>
-							<p>피플앤드테크놀러지<img src="img/main/viewArrow.svg" alt=""></p>
-						</a>
-					</div>
-					<div class="itemBox" data-index="11">
-						<a href="https://chartreuse-rhubarb-e3d.notion.site/18cd431f020380d39311da783a4915b5#18cd431f0203808b864ce4a43fcad410" target="blank" id="viewbtn">
-							<span>포트폴리오 더보기</span>
-							<figure class="arrow">
-								<img src="img/main/viewArrow.svg" class="on" alt="">
-								<img src="img/main/viewArrow.svg" class="off" alt="">
-							</figure>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="contact" id="contact">
-			<div class="w1600">
-				<h3 class="title">CONTACT ME</h3>
-				<p class="txt"><a href="mailto:dlapdlfspdlxm@gmail.com">Email : dlapdlfspdlxm@gmail.com</a></p>
-			</div>
-		</section>
-	</main>
-  </body>
+                            <div class="thumb">
+                                <span class="num">06</span>
+                                <figure><img src="/img/main/portfolioImg04.png" alt=""></figure>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <span>CORPORATE · RESPONSIVE</span>
+                                </div>
+                                <div class="row">
+                                    <h3>나노신소재</h3>
+                                    <i class="arrow">↗</i>
+                                </div>
+                                <p class="desc">기업 홈페이지 PC/모바일 반응형 퍼블리싱</p>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>jQuery</li>
+                                    <li>반응형</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide more">
+						<a href="https://chartreuse-rhubarb-e3d.notion.site/18cd431f020380d39311da783a4915b5#18cd431f0203808b864ce4a43fcad410" target="blank">
+                            <span class="mk">MORE WORKS</span>
+                            <div><div class="big">VIEW<br>ALL</div><p class="cnt">전체 프로젝트 모아보기</p></div>
+                            <span class="go">더보기 <i>↗</i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ctrl">
+                <span><span id="cur">01</span> / <span id="tot">05</span></span>
+                <div class="bar"><b id="prog"></b></div>
+                <div class="btns"><button id="prev" aria-label="이전">←</button><button id="next" aria-label="다음">→</button></div>
+            </div>
+            
+            <a class="all-link" href="https://chartreuse-rhubarb-e3d.notion.site/18cd431f020380d39311da783a4915b5#18cd431f0203808b864ce4a43fcad410" target="blank">전체 프로젝트 보기 <i>↗</i></a>
+        </section>
+        <div class="cursor" id="cursor">DRAG</div>
+    </main>
+    
+    <footer>© 2026 조혜림 · <a href="mailto:hello@email.com">dlapdlfspdlxm@gmail.com</a></footer>
+
+    <script>
+    $(function(){
+        $('header .menu-btn').on('click', function(){
+            $('header').toggleClass('open');
+        });
+        $('header nav a').on('click', function(){
+            $('header').removeClass('open');   // 메뉴 클릭하면 닫기
+        });
+
+        /* 1. 타이핑 효과 */
+        var typeText = 'Building clean, accessible web pages',
+            typeIdx  = 0,
+            $type    = $('#type');
+
+        setTimeout(function f(){
+            if(typeIdx <= typeText.length){
+            $type.text(typeText.slice(0, typeIdx++));
+            setTimeout(f, 70);
+            }
+        }, 2000);
+
+        /* 2. 포트폴리오 스와이퍼 */
+        var pad   = function(n){ return String(n).padStart(2, '0'); };
+        var total = $('.portfolio-swiper .swiper-slide').length;
+        $('#tot').text(pad(total));
+
+        var swiper = new Swiper('.portfolio-swiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 24,
+            loop: false,
+            grabCursor: false,
+            speed: 700,
+            mousewheel: true,
+            slideToClickedSlide: true,
+            keyboard: { enabled: true },
+            on: { init: update, slideChange: update }
+        });
+
+        function update(s){
+            s = s || swiper;
+            $('#cur').text(pad(s.activeIndex + 1));
+            $('#prog').css('transform', 'scaleX(' + ((s.activeIndex + 1) / total) + ')');
+        }
+
+        $('#prev').on('click', function(){ swiper.slidePrev(); });
+        $('#next').on('click', function(){ swiper.slideNext(); });
+
+        /* 3. 커스텀 드래그 커서 */
+        var $cursor = $('#cursor'),
+            $area   = $('.portfolio-swiper'),
+            cx = 0, cy = 0, mx = 0, my = 0;
+
+        $area
+            .on('mousemove', function(e){
+            mx = e.clientX;
+            my = e.clientY;
+            $cursor.addClass('on');
+            })
+            .on('mouseleave', function(){ $cursor.removeClass('on'); })
+            .on('mousedown',  function(){ $cursor.addClass('down'); });
+
+        $(window).on('mouseup', function(){ $cursor.removeClass('down'); });
+
+        (function loop(){
+            cx += (mx - cx) * .18;
+            cy += (my - cy) * .18;
+            $cursor.css({ left: cx + 'px', top: cy + 'px' });
+            requestAnimationFrame(loop);
+        })();
+    });
+    </script>
+</body>
+
 </html>

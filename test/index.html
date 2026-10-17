@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>조혜림 | Web Publisher</title>
+<meta name="description" content="웹 표준과 접근성을 지키는 웹 퍼블리셔 조혜림의 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Raleway:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F0E8;--mark:#DDD3D6;--strap:#4A3F55;--text:#2B2433;--sub:#5E5568;--lav:#CDC0D2;--box:#EAE2EC;--accent:#6B587C;--line:#D9D0DB;--r:20px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--text);font:400 16px/1.75 "Noto Sans KR",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:12px;top:12px;background:#fff;padding:8px 14px;z-index:99}
+
+/* header */
+header{position:sticky;top:0;z-index:10;margin:0 clamp(12px,2vw,28px);background:rgba(244,240,232,.92);backdrop-filter:blur(8px);border-block:1px solid var(--text)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:70px}
+header img{display:block;width:46px;height:46px}
+nav a{font:700 15px Raleway,sans-serif;letter-spacing:.08em;text-decoration:none;margin-left:clamp(14px,3vw,32px);padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--accent)}
+
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 72px);display:grid;justify-items:center;align-items:start;overflow:hidden}
+.w{position:absolute;z-index:0;font:900 clamp(40px,8vw,128px)/1 "Noto Sans KR",sans-serif;letter-spacing:-.03em;color:var(--mark);user-select:none}
+.w1{left:4vw;top:14%}.w2{right:4vw;top:26%}.w3{left:4vw;bottom:22%}.w4{right:4vw;bottom:12%}
+.lanyard{position:relative;z-index:1;width:min(300px,72vw);transform-origin:50% 0;animation:sway 6s ease-in-out infinite alternate}
+.strap{width:22px;height:clamp(110px,20vh,190px);margin:0 auto;background:var(--strap);display:grid;place-items:center;overflow:hidden}
+.strap span{writing-mode:vertical-rl;color:var(--bg);font:700 10px/1 Raleway,sans-serif;letter-spacing:.3em;white-space:nowrap}
+.clip{width:46px;height:16px;margin:0 auto -8px;border:4px solid #B5ADB8;border-bottom:0;border-radius:7px 7px 0 0;position:relative;z-index:1}
+.card{background:#fff;border-radius:22px;padding:12px 12px 18px;box-shadow:0 32px 50px -22px rgba(74,63,85,.5),0 2px 6px rgba(74,63,85,.15)}
+.card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:var(--lav)}
+.card .row{display:flex;justify-content:space-between;align-items:flex-end;margin:14px 4px 0}
+.card b{display:block;font:900 28px/1.2 "Noto Sans KR",sans-serif}
+.card small{display:block;font-size:12px;color:var(--sub);line-height:1.5}
+.bar{width:84px;height:28px;background:repeating-linear-gradient(90deg,var(--text) 0 2px,transparent 2px 4px,var(--text) 4px 5px,transparent 5px 8px)}
+@keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+.type{position:absolute;left:clamp(20px,4vw,64px);bottom:36px;font-size:15px;color:var(--text);z-index:1}
+.type::after{content:"";display:inline-block;width:1px;height:1em;margin-left:2px;vertical-align:-2px;background:var(--text);animation:blink 1s steps(1) infinite}
+.scroll{position:absolute;right:clamp(20px,4vw,64px);bottom:36px;font-size:14px;text-decoration:none;z-index:1}
+@keyframes blink{50%{opacity:0}}
+
+/* sections */
+section{padding:clamp(72px,10vw,130px) clamp(20px,6vw,96px)}
+.wrap{max-width:1000px;margin:0 auto}
+.label{font:500 13px Raleway,sans-serif;letter-spacing:.2em;color:var(--accent);margin-bottom:14px}
+.sub-label{font-size:14px;font-weight:700;color:var(--accent);margin:56px 0 16px}
+.lead{font:700 clamp(24px,3.4vw,38px)/1.45 "Noto Sans KR",sans-serif;word-break:keep-all;text-wrap:balance;margin-bottom:36px}
+.box{background:var(--box);border-radius:var(--r);padding:clamp(20px,3vw,32px);max-width:760px;word-break:keep-all}
+.box p+p{margin-top:10px}
+.tl{list-style:none;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 34px 28px}
+.tl li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl time{font-size:14px;color:var(--sub)}
+.tl h3{font-size:18px;font-weight:700;line-height:1.5}
+.tl p{font-size:15px;color:var(--sub);word-break:keep-all}
+.edu{font-size:15px}
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{padding:8px 20px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:15px}
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:8px}
+.work{display:block;text-decoration:none;background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:0 1px 0 var(--line);transition:transform .25s}
+.work:hover{transform:translateY(-4px)}
+.work .th{aspect-ratio:16/10;background:var(--lav);display:grid;place-items:center;color:var(--strap);font-weight:700}
+.work div.t{padding:18px 20px 22px}
+.work h3{font-size:18px}
+.work p{font-size:14px;color:var(--sub);margin:4px 0 10px;word-break:keep-all}
+.tags{display:flex;gap:6px;flex-wrap:wrap;font-size:12px;color:var(--accent)}
+.tags span{background:var(--box);padding:2px 10px;border-radius:999px}
+.contact a.big{display:inline-block;font:700 clamp(22px,4vw,44px)/1.3 "Noto Sans KR",sans-serif;text-decoration:none;border-bottom:3px solid var(--lav);margin:6px 0 24px}
+.contact a.big:hover{border-color:var(--accent)}
+.contact ul{list-style:none;padding:0;display:flex;gap:20px;flex-wrap:wrap}
+footer{text-align:center;font-size:13px;color:var(--sub);padding:32px 20px 48px}
+@media(max-width:720px){.w{font-size:12vw}.w1{top:6%}.w2{top:34%}.w3{bottom:24%}.w4{bottom:12%}nav a{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#about">본문 바로가기</a>
+
+<header>
+  <div class="in">
+    <a href="#top" aria-label="처음으로"><img src="logo-custom.svg" alt="" width="46" height="46"></a>
+    <nav aria-label="주 메뉴">
+      <a href="#about">ABOUT ME</a><a href="#skills">SKILL</a><a href="#works">PORTFOLIO</a><a href="#contact">CONTACT ME</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <span class="w w1" aria-hidden="true">PUBLISHER</span>
+  <span class="w w2" aria-hidden="true">CODER</span>
+  <span class="w w3" aria-hidden="true">RESPONSIVE</span>
+  <span class="w w4" aria-hidden="true">ACCESSIBLE</span>
+
+  <div class="lanyard">
+    <div class="strap" aria-hidden="true"><span>WEB PUBLISHER · WEB PUBLISHER</span></div>
+    <div class="clip" aria-hidden="true"></div>
+    <div class="card">
+      <img src="images/profile.jpg" alt="조혜림 증명사진" width="276" height="345">
+      <div class="row">
+        <div><b>조혜림</b><small>Web Publisher<br>ID 98-0224</small></div>
+        <div class="bar" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="type" id="type" aria-label="Building clean, accessible web pages"></p>
+  <a class="scroll" href="#about">Scroll ↓</a>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <p class="label">ABOUT</p>
+    <h1 class="lead">웹 표준과 접근성을 지키면서,<br>디자인의 의도를 화면에 정확히 옮기는 퍼블리셔입니다.</h1>
+    <div class="box">
+      <p>웹 에이전시에서 3년간 40개 이상의 프로젝트를 수행하며 다양한 웹사이트를 구축했고, 현재는 1년간 현대면세점에서 이커머스 서비스를 운영하며 실무 경험을 쌓고 있습니다.</p>
+      <p>이벤트·프로모션·브랜드 페이지 제작 및 운영을 담당하며 사용자 경험을 고려한 퍼블리싱을 수행하고, IT·기획·디자인·마케팅 등 다양한 부서와 협업하며 안정적인 서비스 운영과 개선 업무를 경험했습니다.</p>
+      <p>새로운 기술과 업무를 빠르게 습득하고, 문제를 해결하며 더 나은 결과를 만들어가는 과정을 즐깁니다. 앞으로도 구축 경험과 운영 노하우를 바탕으로 사용자와 비즈니스 모두에게 가치 있는 서비스를 만드는 퍼블리셔로 성장하고자 합니다.</p>
+    </div>
+
+    <h2 class="sub-label">경력기술서</h2>
+    <ol class="tl">
+      <li>
+        <time datetime="2022-03">2022.03 – 현재</time>
+        <h3>○○ 주식회사 · 웹퍼블리셔</h3>
+        <p>반응형 웹/모바일 웹 퍼블리싱, 공통 컴포넌트 및 UI 가이드 구축, 웹 접근성 개선</p>
+      </li>
+      <li>
+        <time datetime="2020-06">2020.06 – 2022.02</time>
+        <h3>△△ 에이전시 · 퍼블리셔</h3>
+        <p>기업 홈페이지·프로모션 페이지 30여 건 제작, 크로스브라우징 대응</p>
+      </li>
+    </ol>
+
+    <h2 class="sub-label">교육</h2>
+    <div class="box edu">
+      <p>UI/UX 반응형 웹디자인 &amp; 웹퍼블리셔(디자인&amp;코딩) 양성과정</p>
+      <p>교육기간 : 2022.01.17 ~ 2022.07.29<br>교육기관 : 그린컴퓨터아카데미 (서울 강남구)</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:0">
+  <div class="wrap">
+    <p class="label">SKILLS</p>
+    <ul class="chips">
+      <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>jQuery</li><li>Git</li><li>Figma</li><li>Photoshop</li>
+    </ul>
+  </div>
+</section>
+
+<section id="works" style="padding-top:0">
+  <div class="wrap">
+    <p class="label">WORKS</p>
+    <div class="works">
+      <a class="work" href="#">
+        <div class="th" aria-hidden="true">썸네일</div>
+        <div class="t"><h3>프로젝트명 1</h3><p>한 줄 설명을 입력하세요.</p><div class="tags"><span>HTML5</span><span>CSS3</span><span>반응형</span></div></div>
+      </a>
+      <a class="work" href="#">
+        <div class="th" aria-hidden="true">썸네일</div>
+        <div class="t"><h3>프로젝트명 2</h3><p>한 줄 설명을 입력하세요.</p><div class="tags"><span>jQuery</span><span>웹 접근성</span></div></div>
+      </a>
+      <a class="work" href="#">
+        <div class="th" aria-hidden="true">썸네일</div>
+        <div class="t"><h3>프로젝트명 3</h3><p>한 줄 설명을 입력하세요.</p><div class="tags"><span>JavaScript</span><span>이커머스</span></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact" style="padding-top:0">
+  <div class="wrap">
+    <p class="label">CONTACT</p>
+    <a class="big" href="mailto:hello@example.com">hello@example.com</a>
+    <ul>
+      <li><a href="tel:+821000000000">010-0000-0000</a></li>
+      <li><a href="#" rel="noopener">GitHub</a></li>
+      <li><a href="#" rel="noopener">Notion</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 조혜림. All rights reserved.</footer>
+
+<script>
+(function(){
+  var el=document.getElementById('type'),txt=el.getAttribute('aria-label'),i=0;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=txt;return}
+  (function t(){el.textContent=txt.slice(0,++i);if(i<txt.length)setTimeout(t,60)})();
+})();
+</script>
+</body>
+</html>
